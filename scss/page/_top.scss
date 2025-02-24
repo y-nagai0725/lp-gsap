@@ -21,6 +21,10 @@
   bottom: 40px;
   $parent: &;
 
+  @media screen and (min-width: 1024px) {
+    display: none;
+  }
+
   &__button {
     cursor: pointer;
     width: 40px;
