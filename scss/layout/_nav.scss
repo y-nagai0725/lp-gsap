@@ -1,9 +1,73 @@
 @use "../global" as *;
 
-.gnav {
+.gnav-sp {
+  @media screen and (min-width: 1024px) {
+    display: none;
+  }
+
   &__list-wrapper {
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    padding: 30px;
+    border-radius: 23px;
+    background-color: $blue;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 30px;
+    opacity: 0;
+    width: 50px;
+    height: 50px;
+    transition:
+      width 0.4s ease-out 0.4s,
+      height 0.4s ease-out 0.4s,
+      opacity 0.4s ease-out 0.4s;
+
+    &.js-actived {
+      opacity: 1;
+      width: 208px;
+      height: 330px;
+      transition:
+        width 0.4s ease-out 0s,
+        height 0.4s ease-out 0s,
+        opacity 0.4s ease-out 0s;
+
+      @media screen and (min-width: 768px) {
+        width: 261px;
+        height: 400px;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      padding: 40px;
+      gap: 40px;
+    }
+  }
+
+  &__list {
+    opacity: 0;
+    transition: opacity 0.4s ease-out 0s;
+
+    &.js-actived {
+      opacity: 1;
+      transition: opacity 0.4s ease-out 0.4s;
+    }
+  }
+
+  &__list-link {
+    font-family: $inter;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.03em;
+    color: $white;
+    transition: color 0.2s ease-out;
+
+    &.js-actived {
+      color: $yellow;
+    }
+
+    @media screen and (min-width: 768px) {
+      font-size: 22px;
+    }
   }
 }

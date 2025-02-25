@@ -27,10 +27,12 @@
 
   &__button {
     cursor: pointer;
-    width: 40px;
-    height: 40px;
+    display: block;
+    width: 50px;
+    height: 50px;
     border-radius: 100vmax;
-    background-color: cyan;
+    background-color: $blue;
+    opacity: 0.9;
     position: relative;
 
     &.js-actived {
@@ -52,16 +54,16 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 45%;
-    height: 1px;
+    width: 36%;
+    height: 2px;
     transform-origin: center;
-    background-color: #fff;
+    background-color: $light-blue;
     transition:
-      transform 0.3s ease-out,
-      opacity 0.3s ease-out;
+      transform 0.4s ease-out,
+      opacity 0.4s ease-out;
 
     &.top {
-      transform: translate(-50%, calc(-50% - 5px));
+      transform: translate(-50%, calc(-50% - 6px));
     }
 
     &.center {
@@ -69,7 +71,7 @@
     }
 
     &.bottom {
-      transform: translate(-50%, calc(-50% + 5px));
+      transform: translate(-50%, calc(-50% + 6px));
     }
   }
 }
