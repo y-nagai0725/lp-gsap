@@ -135,6 +135,7 @@ body {
   }
 }
 .gnav-sp__list-wrapper {
+  pointer-events: none;
   position: fixed;
   bottom: 40px;
   right: 30px;
@@ -155,7 +156,14 @@ body {
   -webkit-transition: width 0.4s ease-out 0.4s, height 0.4s ease-out 0.4s, opacity 0.4s ease-out 0.4s;
   transition: width 0.4s ease-out 0.4s, height 0.4s ease-out 0.4s, opacity 0.4s ease-out 0.4s;
 }
+@media screen and (min-width: 768px) {
+  .gnav-sp__list-wrapper {
+    padding: 40px;
+    gap: 40px;
+  }
+}
 .gnav-sp__list-wrapper.js-actived {
+  pointer-events: all;
   opacity: 1;
   width: 208px;
   height: 330px;
@@ -166,12 +174,6 @@ body {
   .gnav-sp__list-wrapper.js-actived {
     width: 261px;
     height: 400px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .gnav-sp__list-wrapper {
-    padding: 40px;
-    gap: 40px;
   }
 }
 .gnav-sp__list {
@@ -206,6 +208,7 @@ body {
   position: fixed;
   right: 30px;
   bottom: 40px;
+  z-index: 100;
 }
 @media screen and (min-width: 1024px) {
   .hamburger-button {

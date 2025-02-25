@@ -6,6 +6,7 @@
   }
 
   &__list-wrapper {
+    pointer-events: none;
     position: fixed;
     bottom: 40px;
     right: 30px;
@@ -23,7 +24,13 @@
       height 0.4s ease-out 0.4s,
       opacity 0.4s ease-out 0.4s;
 
+    @media screen and (min-width: 768px) {
+      padding: 40px;
+      gap: 40px;
+    }
+
     &.js-actived {
+      pointer-events: all;
       opacity: 1;
       width: 208px;
       height: 330px;
@@ -36,11 +43,6 @@
         width: 261px;
         height: 400px;
       }
-    }
-
-    @media screen and (min-width: 768px) {
-      padding: 40px;
-      gap: 40px;
     }
   }
 
