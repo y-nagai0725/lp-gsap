@@ -73,3 +73,32 @@
     }
   }
 }
+
+.gnav-pc {
+  $parent: &;
+  display: none;
+
+  @media screen and (min-width: 1024px) {
+    display: block;
+
+    &.js-white {
+      #{$parent}__list-link {
+        color: $white;
+      }
+    }
+  }
+
+  &__list-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    row-gap: 10px;
+  }
+
+  &__list-link {
+    font-family: $inter;
+    font-weight: 700;
+    font-size: 18px;
+    color: $blue;
+    transition: color 0.3s ease-out;
+  }
+}

@@ -7,3 +7,16 @@ body {
   font-family: "Noto Sans JP", serif;
   font-weight: 400;
 }
+
+a,
+button {
+  display: block;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+img {
+  display: block;
+  object-fit: cover;
+  height: auto;
+}
