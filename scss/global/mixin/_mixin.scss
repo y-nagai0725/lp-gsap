@@ -1,1 +1,29 @@
 @use "../setting" as *;
+
+@mixin tab {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin section-common {
+  margin-top: 160px;
+
+  @include tab {
+    margin-top: 240px;
+  }
+}
+
+@mixin section-inner {
+  padding: 0 30px;
+
+  @include pc {
+    padding: 0 80px;
+  }
+}

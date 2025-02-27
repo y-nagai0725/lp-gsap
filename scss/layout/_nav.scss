@@ -1,7 +1,9 @@
 @use "../global" as *;
 
 .gnav-sp {
-  @media screen and (min-width: 1024px) {
+  position: relative;
+  z-index: 100;
+  @include pc {
     display: none;
   }
 
@@ -24,7 +26,7 @@
       height 0.4s ease-out 0.4s,
       opacity 0.4s ease-out 0.4s;
 
-    @media screen and (min-width: 768px) {
+    @include tab {
       padding: 40px;
       gap: 40px;
     }
@@ -39,7 +41,7 @@
         height 0.4s ease-out 0s,
         opacity 0.4s ease-out 0s;
 
-      @media screen and (min-width: 768px) {
+      @include tab {
         width: 261px;
         height: 400px;
       }
@@ -68,7 +70,7 @@
       color: $yellow;
     }
 
-    @media screen and (min-width: 768px) {
+    @include tab {
       font-size: 22px;
     }
   }
@@ -78,7 +80,7 @@
   $parent: &;
   display: none;
 
-  @media screen and (min-width: 1024px) {
+  @include pc {
     display: block;
 
     &.js-white {

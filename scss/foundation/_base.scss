@@ -1,11 +1,21 @@
 @use "../global" as *;
 
 html {
+  font-size: calc(10vw * calc(100 / 375));
+
+  @include tab {
+    font-size: calc(10vw * calc(100 / 768));
+  }
+
+  @include pc {
+    font-size: calc(10vw * calc(100 / 1920));
+  }
 }
 
 body {
   font-family: "Noto Sans JP", serif;
   font-weight: 400;
+  line-height: 1;
 }
 
 a,

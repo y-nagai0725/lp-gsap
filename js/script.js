@@ -26,3 +26,31 @@ function toggleHeader() {
   }
   currentScrollPosition = newScrollPositon;
 }
+
+gsap.set(".fv__title span", {
+  yPercent: -120,
+});
+
+gsap.to(".fv__title span", {
+  yPercent: 0,
+  ease: "",
+  scrollTrigger: {
+    trigger: ".fv__title span",
+    start: "top 25%",
+    toggleActions: "play none none reverse",
+    invalidateOnRefresh: true,
+    markers: true,
+    onEnter: () => {
+      console.log("onenter");
+    },
+    onLeave: () => {
+      console.log("onleave");
+    },
+    onEnterBack: () => {
+      console.log("onenterback");
+    },
+    onLeaveBack: () => {
+      console.log("onleaveback");
+    },
+  }
+});

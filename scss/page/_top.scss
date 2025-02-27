@@ -1,9 +1,137 @@
 @use "../global" as *;
 
 .fv {
+  height: calc(100svh + 33rem);
+  position: relative;
+  overflow: hidden;
+
+  @include tab {
+    height: calc(100svh + 57.7rem);
+  }
+
+  @include pc {
+    height: 100vh;
+  }
+
+  &__inner {
+    @include section-inner;
+    height: calc(100% - 33rem);
+    display: grid;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+
+    @include tab {
+      height: calc(100% - 57.7rem);
+    }
+
+    @include pc {
+      height: 100%;
+      align-items: end;
+    }
+  }
+
+  &__title-wrapper {
+    display: grid;
+
+    @include pc {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__title {
+    font-family: $roboto-slab;
+    font-size: clamp(50px, 5rem, 85px);
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    overflow: hidden;
+
+    span {
+      display: inline-block;
+    }
+
+    @include tab {
+      font-size: clamp(85px, 8.5rem, 100px);
+    }
+
+    @include pc {
+      font-size: clamp(60px, 11.5rem, 115px);
+    }
+  }
+
+  &__sub-title {
+    margin-top: 1rem;
+    font-size: clamp(15px, 1.5rem, 25px);
+    font-weight: 700;
+    overflow: hidden;
+
+    @include tab {
+      margin-top: 1.5rem;
+      font-size: clamp(25px, 2.5rem, 28px);
+    }
+
+    @include pc {
+      margin-top: 2rem;
+      font-size: clamp(18px, 2.8rem, 28px);
+    }
+  }
+
+  &__image-wrapper {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 56rem;
+    height: 56rem;
+
+    @include tab {
+      width: 92rem;
+      height: 92rem;
+    }
+
+    @include pc {
+      bottom: initial;
+      top: 0;
+      transform: translateX(8%);
+      width: 133rem;
+      height: 133rem;
+
+    }
+  }
+
+  &__picture-1,
+  &__picture-2,
+  &__picture-3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    aspect-ratio: 1;
+
+    img {
+
+    }
+  }
+
+  &__picture-1 {
+    width: 100%;
+    background-color: $dammy;
+  }
+
+  &__picture-2 {
+    width: calc(40% / 56 * 100);
+    background-color: $yellow;
+  }
+
+  &__picture-3 {
+    width: calc(24% / 56 * 100);
+    background-color: $blue;
+  }
 }
 
 .introduction {
+  @include section-common;
 }
 
 .brand {
@@ -22,7 +150,7 @@
   $parent: &;
   z-index: 100;
 
-  @media screen and (min-width: 1024px) {
+  @include pc {
     display: none;
   }
 
