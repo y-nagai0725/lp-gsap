@@ -5,6 +5,9 @@ const header = document.querySelector(".header");
 
 let currentScrollPosition = 0;
 
+/**
+ * ハンバーガーメニュークリックイベント
+ */
 hamburgerButton.addEventListener("click", function () {
   this.classList.toggle("js-actived");
   gnavSpList.classList.toggle("js-actived");
@@ -13,10 +16,16 @@ hamburgerButton.addEventListener("click", function () {
   })
 });
 
+/**
+ * スクロールイベント
+ */
 window.addEventListener("scroll", function () {
   toggleHeader();
 });
 
+/**
+ * ヘッダー表示切り替え
+ */
 function toggleHeader() {
   const newScrollPositon = window.scrollY;
   if (newScrollPositon > currentScrollPosition) {
@@ -27,7 +36,10 @@ function toggleHeader() {
   currentScrollPosition = newScrollPositon;
 }
 
-function setFvTitleAnimation() {
+/**
+ * FVアニメーション設定
+ */
+function setFvAnimation() {
   gsap.set(".fv__title span", {
     yPercent: 120,
   });
@@ -53,6 +65,29 @@ function setFvTitleAnimation() {
     yPercent: 0,
     ease: "",
   }, "<");
+
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: ".fv__inner",
+      start: "top top",
+      end: "bottom top",
+      scrub: 1,
+      invalidateOnRefresh: true,
+    },
+  }).to(".picture-right", {
+    rotation: 180,
+    ease: "linear",
+  }).to(".picture-left", {
+    rotation: -180,
+    ease: "linear",
+  }, "<")
 }
 
-setFvTitleAnimation();
+/**
+ * 初期処理
+ */
+function init() {
+  setFvAnimation();
+}
+
+init();

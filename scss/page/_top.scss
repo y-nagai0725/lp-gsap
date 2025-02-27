@@ -1,32 +1,35 @@
 @use "../global" as *;
 
+.main {
+  overflow-x: hidden;
+}
+
 .fv {
-  height: calc(100svh + 33rem);
+  height: calc(100svh + 44.7rem);
   position: relative;
-  overflow: hidden;
 
   @include tab {
-    height: calc(100svh + 57.7rem);
+    height: calc(100svh + 76.8rem);
   }
 
   @include pc {
-    height: 100vh;
+    height: calc(100vh + 52.6rem);
   }
 
   &__inner {
     @include section-inner;
-    height: calc(100% - 33rem);
+    height: calc(100% - 44.7rem);
     display: grid;
     align-items: center;
     position: relative;
     z-index: 1;
 
     @include tab {
-      height: calc(100% - 57.7rem);
+      height: calc(100% - 76.8rem);
     }
 
     @include pc {
-      height: 100%;
+      height: calc(100% - 52.6rem);
       align-items: end;
     }
   }
@@ -40,6 +43,7 @@
   }
 
   &__title {
+    padding-bottom: 0.1em;
     font-family: $roboto-slab;
     font-size: clamp(50px, 5rem, 85px);
     letter-spacing: 0.05em;
@@ -60,7 +64,9 @@
   }
 
   &__sub-title {
+    padding-bottom: 0.1em;
     margin-top: 1rem;
+    font-family: $roboto-slab;
     font-size: clamp(15px, 1.5rem, 25px);
     font-weight: 700;
     overflow: hidden;
@@ -85,21 +91,20 @@
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
-    width: 56rem;
-    height: 56rem;
+    width: calc(56rem * sqrt(2));
+    height: calc(56rem * sqrt(2));
 
     @include tab {
-      width: 92rem;
-      height: 92rem;
+      width: calc(92rem * sqrt(2));
+      height: calc(92rem * sqrt(2));
     }
 
     @include pc {
       bottom: initial;
-      top: 0;
-      transform: translateX(8%);
-      width: 133rem;
-      height: 133rem;
-
+      top: -27.5rem;
+      transform: translateX(-9%);
+      width: calc(133rem * sqrt(2));
+      height: calc(133rem * sqrt(2));
     }
   }
 
@@ -114,23 +119,38 @@
     aspect-ratio: 1;
 
     img {
-
     }
   }
 
   &__picture-1 {
-    width: 100%;
+    width: calc(100% / sqrt(2));
     background-color: $dammy;
   }
 
   &__picture-2 {
-    width: calc(40% / 56 * 100);
+    width: calc(40% / (56 * sqrt(2)) * 100);
     background-color: $yellow;
+
+    @include tab {
+      width: calc(68% / (92 * sqrt(2)) * 100);
+    }
+
+    @include pc {
+      width: calc(93% / (133 * sqrt(2)) * 100);
+    }
   }
 
   &__picture-3 {
-    width: calc(24% / 56 * 100);
+    width: calc(24% / (56 * sqrt(2)) * 100);
     background-color: $blue;
+
+    @include tab {
+      width: calc(44% / (92 * sqrt(2)) * 100);
+    }
+
+    @include pc {
+      width: calc(53% / (133 * sqrt(2)) * 100);
+    }
   }
 }
 
