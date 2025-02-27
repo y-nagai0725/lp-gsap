@@ -65,6 +65,10 @@
     font-weight: 700;
     overflow: hidden;
 
+    span {
+      display: inline-block;
+    }
+
     @include tab {
       margin-top: 1.5rem;
       font-size: clamp(25px, 2.5rem, 28px);

@@ -379,6 +379,9 @@ img {
   font-weight: 700;
   overflow: hidden;
 }
+.fv__sub-title span {
+  display: inline-block;
+}
 @media screen and (min-width: 768px) {
   .fv__sub-title {
     margin-top: 1.5rem;

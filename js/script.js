@@ -27,30 +27,32 @@ function toggleHeader() {
   currentScrollPosition = newScrollPositon;
 }
 
-gsap.set(".fv__title span", {
-  yPercent: -120,
-});
+function setFvTitleAnimation() {
+  gsap.set(".fv__title span", {
+    yPercent: 120,
+  });
 
-gsap.to(".fv__title span", {
-  yPercent: 0,
-  ease: "",
-  scrollTrigger: {
-    trigger: ".fv__title span",
-    start: "top 25%",
-    toggleActions: "play none none reverse",
-    invalidateOnRefresh: true,
-    markers: true,
-    onEnter: () => {
-      console.log("onenter");
+  gsap.set(".fv__sub-title span", {
+    yPercent: 120,
+  });
+
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: ".fv__inner",
+      start: "top 1px",
+      end: "bottom center",
+      toggleActions: "play reverse play none",
+      invalidateOnRefresh: true,
     },
-    onLeave: () => {
-      console.log("onleave");
-    },
-    onEnterBack: () => {
-      console.log("onenterback");
-    },
-    onLeaveBack: () => {
-      console.log("onleaveback");
-    },
-  }
-});
+  }).to(".fv__title span", {
+    duration: 0.8,
+    yPercent: 0,
+    ease: "",
+  }).to(".fv__sub-title span", {
+    duration: 0.8,
+    yPercent: 0,
+    ease: "",
+  }, "<");
+}
+
+setFvTitleAnimation();
