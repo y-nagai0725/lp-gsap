@@ -1,1 +1,11 @@
 @use "../setting" as *;
+
+//セクションタイトル無限スクロール用
+@keyframes scroll-title {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

@@ -124,6 +124,27 @@ meter {
   display: none;
 }
 
+@-webkit-keyframes scroll-title {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll-title {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
 html {
   font-size: 2.6666666667vw;
 }
@@ -315,11 +336,13 @@ span {
 }
 
 .fv {
+  margin-bottom: 80px;
   height: calc(100svh + 44.7rem);
   position: relative;
 }
 @media screen and (min-width: 768px) {
   .fv {
+    margin-bottom: 160px;
     height: calc(100svh + 76.8rem);
   }
 }
@@ -441,7 +464,7 @@ span {
 }
 .fv__picture-2 {
   width: 50.5076272276%;
-  background-color: #d7ca25;
+  background-color: #adadad;
 }
 @media screen and (min-width: 768px) {
   .fv__picture-2 {
@@ -455,7 +478,7 @@ span {
 }
 .fv__picture-3 {
   width: 30.3045763366%;
-  background-color: #003986;
+  background-color: #ebebeb;
 }
 @media screen and (min-width: 768px) {
   .fv__picture-3 {
@@ -469,11 +492,11 @@ span {
 }
 
 .introduction {
-  margin-top: 160px;
+  padding-bottom: 160px;
 }
 @media screen and (min-width: 768px) {
   .introduction {
-    margin-top: 240px;
+    padding-bottom: 240px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -596,12 +619,316 @@ span {
   }
 }
 
-.brand {
-  margin-top: 160px;
+.brand__title-wrapper {
+  position: relative;
+  height: 25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+.brand__title-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 67.5rem;
+  height: 67.5rem;
+  border-radius: 50%;
+  background-color: #adadad;
+  z-index: -1;
 }
 @media screen and (min-width: 768px) {
-  .brand {
-    margin-top: 240px;
+  .brand__title-wrapper {
+    height: 35rem;
+  }
+  .brand__title-wrapper::before {
+    width: 138rem;
+    height: 138rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .brand__title-wrapper {
+    height: 70rem;
+  }
+  .brand__title-wrapper::before {
+    width: 345.6rem;
+    height: 345.6rem;
+  }
+}
+.brand__title {
+  margin-right: 0.5em;
+  font-family: "Roboto Slab", serif;
+  font-size: clamp(44px, 4.4rem, 70px);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  -webkit-animation: scroll-title 15s linear infinite;
+          animation: scroll-title 15s linear infinite;
+}
+@media screen and (min-width: 768px) {
+  .brand__title {
+    font-size: clamp(70px, 7rem, 120px);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .brand__title {
+    font-size: clamp(120px, 17.2rem, 172px);
+  }
+}
+.brand__inner {
+  padding: 0 30px;
+  padding-top: 90px;
+  padding-bottom: 160px;
+  background-color: #747474;
+}
+@media screen and (min-width: 1024px) {
+  .brand__inner {
+    padding: 0 80px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .brand__inner {
+    padding-bottom: 240px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .brand__inner {
+    padding-top: 150px;
+  }
+}
+.brand__text-area {
+  margin-bottom: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 40px;
+}
+@media screen and (min-width: 1024px) {
+  .brand__text-area {
+    margin-bottom: 150px;
+    margin-inline: auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 24px;
+    max-width: 1150px;
+  }
+}
+.brand__heading {
+  font-size: clamp(24px, 2.4rem, 30px);
+  font-weight: 700;
+  line-height: 2;
+}
+@media screen and (min-width: 768px) {
+  .brand__heading {
+    font-size: clamp(30px, 3rem, 38px);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .brand__heading {
+    font-size: 30px;
+    width: 50%;
+  }
+}
+.brand__text {
+  font-size: clamp(16px, 1.6rem, 22px);
+  line-height: 2;
+}
+@media screen and (min-width: 768px) {
+  .brand__text {
+    font-size: clamp(22px, 2.2rem, 28px);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .brand__text {
+    font-size: 22px;
+    width: 50%;
+  }
+}
+.brand__image-wrapper {
+  margin-bottom: 30px;
+  display: grid;
+  gap: 30px;
+}
+@media screen and (min-width: 768px) {
+  .brand__image-wrapper {
+    margin-bottom: 80px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .brand__image-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+    -webkit-column-gap: 60px;
+       -moz-column-gap: 60px;
+            column-gap: 60px;
+    row-gap: 120px;
+  }
+}
+.brand__picture {
+  aspect-ratio: 1;
+  border-radius: 15px;
+  background-color: #adadad;
+}
+.brand__overview-area {
+  padding: 60px 30px;
+  background-color: #fff;
+  border-radius: 15px;
+}
+@media screen and (min-width: 768px) {
+  .brand__overview-area {
+    padding: 80px 40px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .brand__overview-area {
+    padding: 160px;
+    border-radius: 23px;
+  }
+}
+.brand__overview-title {
+  margin-bottom: 40px;
+  font-family: "Roboto Slab", serif;
+  font-weight: 600;
+  font-size: clamp(30px, 3rem, 44px);
+  line-height: 1.2;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .brand__overview-title {
+    margin-bottom: 50px;
+    font-size: clamp(44px, 4.4rem, 48px);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .brand__overview-title {
+    margin-bottom: 120px;
+    font-size: clamp(48px, 5.2rem, 52px);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .brand__title-br {
+    display: none;
+  }
+}
+.brand__bottom-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media screen and (min-width: 1024px) {
+  .brand__bottom-box {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+.brand__left-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media screen and (min-width: 1024px) {
+  .brand__left-box {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+.brand__overview-logo {
+  margin-bottom: 30px;
+  width: clamp(200px, 20rem, 400px);
+  aspect-ratio: 200/42;
+  background-color: #747474;
+}
+@media screen and (min-width: 768px) {
+  .brand__overview-logo {
+    margin-bottom: 40px;
+    width: clamp(400px, 40rem, 480px);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .brand__overview-logo {
+    margin-bottom: 0;
+    width: clamp(480px, 55rem, 550px);
+  }
+}
+.brand__overview-link {
+  margin-bottom: 50px;
+  padding: 1em 0;
+  width: clamp(200px, 20rem, 256px);
+  display: grid;
+  place-content: center;
+  border-radius: 100vmax;
+  font-family: "Roboto Slab", serif;
+  font-weight: 600;
+  font-size: clamp(20px, 2rem, 28px);
+  background-color: #747474;
+}
+@media screen and (min-width: 768px) {
+  .brand__overview-link {
+    margin-bottom: 60px;
+    width: clamp(256px, 25.6rem, 300px);
+    font-size: clamp(28px, 2.8rem, 34px);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .brand__overview-link {
+    margin-bottom: 0;
+    width: clamp(180px, 21rem, 210px);
+    font-size: clamp(18px, 2rem, 20px);
+  }
+}
+.brand__overview-text {
+  font-size: clamp(15px, 1.5rem, 22px);
+  line-height: 2;
+}
+@media screen and (min-width: 768px) {
+  .brand__overview-text {
+    font-size: clamp(22px, 2.2rem, 28px);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .brand__overview-text {
+    font-size: 22px;
+    width: 68rem;
   }
 }
 
