@@ -84,7 +84,37 @@ function setFvAnimation() {
   }).to(".picture-left", {
     rotation: -180,
     ease: "linear",
-  }, "<")
+  }, "<");
+}
+
+/**
+ * FVの画像表示処理
+ */
+function showFvImage() {
+  gsap.fromTo([".fv__picture-1", ".fv__picture-2", ".fv__picture-3"], {
+    rotation: -90,
+    opacity: 0,
+    scale: 0.5,
+  }, {
+    duration: 1.2,
+    rotation: 0,
+    opacity: 1,
+    scale: 1,
+    ease: "",
+    stagger: {
+      each: 0.33,
+    }
+  });
+}
+
+/**
+ * OPアニメーション設定
+ */
+function setOpeningAnimation() {
+  //TODO
+
+  //OPアニメーション終了後に実行
+  showFvImage();
 }
 
 /**
@@ -175,6 +205,7 @@ function setIntroductionSectionAnimation() {
  * 初期処理
  */
 function init() {
+  setOpeningAnimation();
   setFvAnimation();
   setIntroductionSectionAnimation();
 }
