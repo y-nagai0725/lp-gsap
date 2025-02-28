@@ -162,6 +162,10 @@ picture {
   display: block;
 }
 
+span {
+  display: inline-block;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -368,9 +372,6 @@ picture {
   white-space: nowrap;
   overflow: hidden;
 }
-.fv__title span {
-  display: inline-block;
-}
 @media screen and (min-width: 768px) {
   .fv__title {
     font-size: clamp(85px, 8.5rem, 100px);
@@ -388,9 +389,6 @@ picture {
   font-size: clamp(15px, 1.5rem, 25px);
   font-weight: 700;
   overflow: hidden;
-}
-.fv__sub-title span {
-  display: inline-block;
 }
 @media screen and (min-width: 768px) {
   .fv__sub-title {
@@ -523,6 +521,7 @@ picture {
   font-family: "Roboto Slab", serif;
   font-size: clamp(75px, 7.5rem, 122px);
   letter-spacing: 0.03em;
+  overflow: hidden;
 }
 @media screen and (min-width: 768px) {
   .introduction__title {

@@ -93,6 +93,7 @@ function setFvAnimation() {
 function setIntroductionSectionAnimation() {
   const scrollArea = document.querySelector(".introduction__scroll-area");
   const introductionTitleWrapper = document.querySelector(".introduction__title-wrapper");
+  const introductionTitle = document.querySelectorAll(".introduction__title span");
   const introductionText = document.querySelector(".introduction__text");
   const introductionImageWrapper = document.querySelector(".introduction__image-wrapper");
   const introductionPicture_1 = document.querySelector(".introduction__picture-1");
@@ -100,6 +101,33 @@ function setIntroductionSectionAnimation() {
   const introductionPicture_3 = document.querySelector(".introduction__picture-3");
   const introductionPicture_4 = document.querySelector(".introduction__picture-4");
 
+  //sp,tab,pc共通
+  gsap.set(introductionTitle, {
+    yPercent: 120,
+  });
+
+  gsap.set(introductionText, {
+    opacity: 0,
+  });
+
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: scrollArea,
+      start: "top center",
+      onEnter: () => {
+        gsap.timeline().to(introductionTitle, {
+          duration: 0.8,
+          yPercent: 0,
+          ease: "",
+        }).to(introductionText, {
+          duration: 0.8,
+          opacity: 1,
+        }, "<0.4");
+      },
+    }
+  });
+
+  //pcのみ
   mm.add("(min-width: 1024px)", () => {
     gsap.set(introductionPicture_1, {
       y: () => -(window.innerHeight),
