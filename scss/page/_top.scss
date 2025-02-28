@@ -115,7 +115,6 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: block;
     aspect-ratio: 1;
 
     img {
@@ -156,9 +155,120 @@
 
 .introduction {
   @include section-common;
+
+  &__scroll-area {
+    @include pc {
+      overflow: hidden;
+    }
+  }
+
+  &__inner {
+    @include section-inner;
+
+    @include pc {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__title-wrapper {
+    margin-bottom: 40px;
+    display: grid;
+
+    @include tab {
+      place-content: center;
+    }
+
+    @include pc {
+      margin-bottom: 0;
+      margin-right: 10rem;
+      flex-shrink: 0;
+    }
+  }
+
+  &__title {
+    font-family: $roboto-slab;
+    font-size: clamp(75px, 7.5rem, 122px);
+    letter-spacing: 0.03em;
+
+    @include tab {
+      font-size: clamp(122px, 12.2rem, 180px);
+    }
+
+    @include pc {
+      font-size: clamp(180px, 23rem, 230px);
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    font-size: clamp(20px, 2rem, 30px);
+    font-weight: 700;
+    line-height: 1.6;
+
+    @include tab {
+      font-size: clamp(30px, 3rem, 36px);
+      text-align: center;
+    }
+
+    @include pc {
+      margin-bottom: 0;
+      margin-right: 20rem;
+      font-size: clamp(22px, 2.8rem, 28px);
+      text-align: left;
+      flex-shrink: 0;
+    }
+  }
+
+  &__image-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+
+    @include tab {
+      width: calc(100% - 15.4rem);
+      gap: 2.4rem;
+      margin-inline: auto;
+    }
+
+    @include pc {
+      width: 112rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      flex-shrink: 0;
+    }
+  }
+
+  &__picture-1,
+  &__picture-2,
+  &__picture-3,
+  &__picture-4 {
+    aspect-ratio: 150 / 210;
+    background-color: $dammy;
+    position: relative;
+  }
+
+  &__picture-1,
+  &__picture-3 {
+    top: 50px;
+
+    @include pc {
+      top: 0;
+    }
+  }
+
+  &__picture-2,
+  &__picture-4 {
+    @include pc {
+      top: 0;
+    }
+  }
 }
 
 .brand {
+  @include section-common;
 }
 
 .present {
