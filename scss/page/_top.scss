@@ -384,7 +384,7 @@
     }
   }
 
-  &__image-wrapper {
+  &__list-wrapper {
     margin-bottom: 30px;
     display: grid;
     gap: 30px;
@@ -452,10 +452,11 @@
     flex-direction: column;
     align-items: center;
 
-    @include pc {
+    @include pc-large {
       flex-direction: row;
       align-items: stretch;
       justify-content: space-between;
+      gap: 80px;
     }
   }
 
@@ -464,7 +465,7 @@
     flex-direction: column;
     align-items: center;
 
-    @include pc {
+    @include pc-large {
       justify-content: space-between;
     }
   }
@@ -480,7 +481,7 @@
       width: clamp(400px, 40rem, 480px);
     }
 
-    @include pc {
+    @include pc-large {
       margin-bottom: 0;
       width: clamp(480px, 55rem, 550px);
     }
@@ -507,7 +508,7 @@
       font-size: clamp(28px, 2.8rem, 34px);
     }
 
-    @include pc {
+    @include pc-large {
       margin-bottom: 0;
       width: clamp(180px, 21rem, 210px);
       font-size: clamp(18px, 2rem, 20px);
@@ -522,7 +523,7 @@
       font-size: clamp(22px, 2.2rem, 28px);
     }
 
-    @include pc {
+    @include pc-large {
       font-size: 22px;
       width: 68rem;
     }
@@ -530,6 +531,209 @@
 }
 
 .present {
+  &__title-wrapper {
+    position: relative;
+    height: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 67.5rem;
+      height: 67.5rem;
+      border-radius: 50%;
+      background-color: $dammy2;
+      z-index: -1;
+    }
+
+    @include tab {
+      height: 35rem;
+
+      &::before {
+        width: 138rem;
+        height: 138rem;
+      }
+    }
+
+    @include pc {
+      height: 70rem;
+
+      &::before {
+        width: 345.6rem;
+        height: 345.6rem;
+      }
+    }
+  }
+
+  &__title {
+    margin-right: 0.5em;
+    font-family: $roboto-slab;
+    font-size: clamp(44px, 4.4rem, 70px);
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    animation: scroll-title 15s linear infinite;
+
+    @include tab {
+      font-size: clamp(70px, 7rem, 120px);
+    }
+
+    @include pc {
+      font-size: clamp(120px, 17.2rem, 172px);
+    }
+  }
+
+  &__inner {
+    @include section-inner;
+    padding-top: 90px;
+    padding-bottom: 160px;
+    background-color: $dammy;
+
+    @include tab {
+      padding-bottom: 240px;
+    }
+
+    @include pc {
+      padding-top: 150px;
+    }
+  }
+
+  &__text-area {
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include pc {
+      margin-bottom: 150px;
+      margin-inline: auto;
+      flex-direction: row;
+      justify-content: center;
+      gap: 24px;
+      max-width: 1150px;
+    }
+  }
+
+  &__heading {
+    font-size: clamp(24px, 2.4rem, 30px);
+    font-weight: 700;
+    line-height: 2;
+
+    @include tab {
+      font-size: clamp(30px, 3rem, 38px);
+    }
+
+    @include pc {
+      font-size: 30px;
+      width: 50%;
+    }
+  }
+
+  &__text {
+    font-size: clamp(16px, 1.6rem, 22px);
+    line-height: 2;
+
+    @include tab {
+      font-size: clamp(22px, 2.2rem, 28px);
+    }
+
+    @include pc {
+      font-size: 22px;
+      width: 50%;
+    }
+  }
+
+  &__list-wrapper {
+    display: grid;
+    gap: 80px;
+  }
+
+  &__list {
+    padding: 30px;
+    background-color: $white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+
+    @include tab {
+      padding: 40px;
+    }
+
+    @include pc {
+      padding: 40px 80px;
+      border-radius: 35px;
+      flex-direction: row-reverse;
+      align-items: center;
+      gap: 160px;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1px;
+        height: calc(100% - 80px);
+        background-color: $black;
+      }
+    }
+  }
+
+  &__list-picture {
+    margin-bottom: 30px;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: $dammy;
+
+    @include tab {
+      margin-bottom: 40px;
+    }
+
+    @include pc {
+      margin-bottom: 0;
+      width: 50%;
+    }
+  }
+
+  &__list-box {
+    @include pc {
+      width: 50%;
+    }
+  }
+
+  &__list-title {
+    margin-bottom: 30px;
+    font-size: clamp(22px, 2.2rem, 28px);
+    font-weight: 700;
+
+    @include tab {
+      font-size: clamp(28px, 2.8rem, 30px);
+    }
+
+    @include pc {
+      margin-bottom: 40px;
+      font-size: 30px;
+    }
+  }
+
+  &__list-text {
+    font-size: clamp(13px, 1.3rem, 22px);
+    line-height: 2;
+
+    @include tab {
+      font-size: clamp(22px, 2.2rem, 26px);
+    }
+
+    @include pc {
+      font-size: 17px;
+    }
+  }
 }
 
 .outline {
