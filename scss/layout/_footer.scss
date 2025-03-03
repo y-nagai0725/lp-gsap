@@ -1,5 +1,125 @@
 @use "../global" as *;
 
 .footer {
+  background-color: $dammy;
 
+  &__inner {
+    @include section-inner;
+
+    padding-top: 40px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 60px);
+      height: 1px;
+      background-color: $white;
+    }
+
+    @include tab {
+      padding-top: 40px;
+      padding-bottom: 80px;
+    }
+
+    @include pc {
+      padding-bottom: 240px;
+      flex-direction: row;
+      align-items: initial;
+      justify-content: space-between;
+
+      &::before {
+        width: calc(100% - 160px);
+      }
+    }
+  }
+
+  &__logo-link {
+    width: clamp(150px, 15rem, 300px);
+    aspect-ratio: 150 / 32;
+    background-color: $dammy2;
+
+    @include tab {
+      width: clamp(300px, 30rem, 400px);
+    }
+
+    @include pc {
+      width: 300px;
+    }
+  }
+
+  &__logo-image {
+  }
+
+  &__copyright {
+    font-size: clamp(10px, 1rem, 13px);
+    line-height: 1.5;
+    text-align: center;
+
+    @include tab {
+      font-size: clamp(13px, 1.3rem, 14px);
+    }
+
+    @include pc {
+      font-size: 14px;
+      line-height: 1;
+      align-self: flex-end;
+    }
+  }
+
+  &__br {
+    @include pc {
+      display: none;
+    }
+  }
+
+  &__image-wrapper {
+    overflow: hidden;
+    padding-top: 10rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 67.5rem;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background-color: $white;
+    }
+
+    @include tab {
+      padding-top: 16rem;
+
+      &::before {
+        width: 138rem;
+      }
+    }
+
+    @include pc {
+      padding-top: 32rem;
+
+      &::before {
+        width: 345.6rem;
+      }
+    }
+  }
+
+  &__picture {
+    width: 100%;
+    aspect-ratio: 375 / 158;
+    position: relative;
+    z-index: 1;
+    background-color: $dammy2;
+  }
 }
