@@ -2,6 +2,7 @@
 
 .main {
   overflow-x: hidden;
+  background-color: $white;
 }
 
 .fv {
@@ -274,6 +275,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    background-color: $white;
 
     &::before {
       content: "";
@@ -285,7 +287,6 @@
       height: 67.5rem;
       border-radius: 50%;
       background-color: $dammy2;
-      z-index: -1;
     }
 
     @include tab {
@@ -538,6 +539,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    background-color: $dammy;
 
     &::before {
       content: "";
@@ -549,7 +551,6 @@
       height: 67.5rem;
       border-radius: 50%;
       background-color: $dammy2;
-      z-index: -1;
     }
 
     @include tab {
@@ -744,6 +745,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    background-color: $dammy;
 
     &::before {
       content: "";
@@ -755,7 +757,6 @@
       height: 67.5rem;
       border-radius: 50%;
       background-color: $dammy2;
-      z-index: -1;
     }
 
     @include tab {

@@ -1,7 +1,16 @@
 @use "../global" as *;
 
 .footer {
-  background-color: $dammy;
+  position: relative;
+  padding-bottom: 26rem;
+
+  @include tab {
+    padding-bottom: 48rem;
+  }
+
+  @include pc {
+    padding-bottom: 113rem;
+  }
 
   &__inner {
     @include section-inner;
@@ -13,6 +22,7 @@
     align-items: center;
     gap: 30px;
     position: relative;
+    background-color: $dammy;
 
     &::before {
       content: "";
@@ -81,45 +91,74 @@
     }
   }
 
-  &__image-wrapper {
-    overflow: hidden;
-    padding-top: 10rem;
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 67.5rem;
-      aspect-ratio: 1;
-      border-radius: 50%;
-      background-color: $white;
-    }
-
-    @include tab {
-      padding-top: 16rem;
-
-      &::before {
-        width: 138rem;
-      }
-    }
-
-    @include pc {
-      padding-top: 32rem;
-
-      &::before {
-        width: 345.6rem;
-      }
-    }
+  &__bg {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    z-index: -1;
   }
 
   &__picture {
     width: 100%;
     aspect-ratio: 375 / 158;
-    position: relative;
-    z-index: 1;
     background-color: $dammy2;
+  }
+
+  &__back-button {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $dammy;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    @include tab {
+      right: 20px;
+      width: 64px;
+      height: 64px;
+    }
+
+    @include pc {
+      right: 30px;
+      width: 94px;
+      height: 94px;
+    }
+  }
+
+  &__button-image {
+    width: 10px;
+
+    @include tab {
+      width: 18px;
+    }
+
+    @include pc {
+      width: 24px;
+    }
+  }
+
+  &__button-text {
+    font-family: $roboto-slab;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+
+    @include tab {
+      font-size: 11px;
+    }
+
+    @include pc {
+      font-size: 16px;
+    }
   }
 }
