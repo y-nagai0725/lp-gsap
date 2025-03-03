@@ -2,6 +2,7 @@ const hamburgerButton = document.querySelector(".hamburger-button__button");
 const gnavSpList = document.querySelector(".gnav-sp__list-wrapper");
 const gnavSpListItems = document.querySelectorAll(".gnav-sp__list");
 const header = document.querySelector(".header");
+const footerBackButton = document.querySelector(".footer__back-button");
 const horizontalScrollValue = 900;
 
 //GSAPメディアクエリ
@@ -18,6 +19,16 @@ hamburgerButton.addEventListener("click", function () {
   gnavSpListItems.forEach(item => {
     item.classList.toggle("js-actived");
   })
+});
+
+/**
+ * トップへ戻るボタンクリック時処理
+ */
+footerBackButton.addEventListener("click", function () {
+  window.scroll({
+    top: 0,
+    behavior: "smooth",
+  });
 });
 
 /**
