@@ -295,8 +295,8 @@ span {
   font-size: 18px;
   letter-spacing: -0.03em;
   color: #fff;
-  -webkit-transition: color 0.2s ease-out;
-  transition: color 0.2s ease-out;
+  -webkit-transition: color 0.3s ease-out;
+  transition: color 0.3s ease-out;
 }
 .gnav-sp__list-link.js-actived {
   color: #d7ca25;

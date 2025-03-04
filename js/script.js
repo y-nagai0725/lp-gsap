@@ -93,6 +93,21 @@ function setHamburgerButtonHideAnimation() {
 }
 
 /**
+ * sp,tabのグローバルナビゲーションメニューのテキストアニメーション設定
+ */
+function setGnavSpTextAnimation() {
+  const sections = document.querySelectorAll("[data-tag='section']");
+  sections.forEach(section => {
+    ScrollTrigger.create({
+      trigger: section,
+      start: "top bottom",
+      end: "bottom bottom",
+      toggleClass: { targets: "[data-tag='link-" + section.className + "']", className: "js-actived" },
+    });
+  });
+}
+
+/**
  * OPアニメーション設定
  */
 function setOpeningAnimation() {
@@ -259,6 +274,7 @@ function setIntroductionSectionAnimation() {
 function init() {
   setAnchorLinkScrollAnimation()
   setHamburgerButtonHideAnimation();
+  setGnavSpTextAnimation();
   setOpeningAnimation();
   setFvAnimation();
   setIntroductionSectionAnimation();
