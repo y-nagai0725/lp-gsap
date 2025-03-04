@@ -266,7 +266,7 @@ span {
   }
 }
 .gnav-sp__list-wrapper.js-actived {
-  pointer-events: all;
+  pointer-events: auto;
   opacity: 1;
   width: 208px;
   height: 330px;
@@ -817,6 +817,9 @@ span {
   }
 }
 
+.brand {
+  position: relative;
+}
 .brand__title-wrapper {
   position: relative;
   height: 25rem;
@@ -1131,6 +1134,9 @@ span {
   }
 }
 
+.present {
+  position: relative;
+}
 .present__title-wrapper {
   position: relative;
   height: 25rem;
@@ -1144,7 +1150,6 @@ span {
       -ms-flex-align: center;
           align-items: center;
   overflow: hidden;
-  background-color: #747474;
 }
 .present__title-wrapper::before {
   content: "";
@@ -1373,6 +1378,9 @@ span {
   }
 }
 
+.outline {
+  position: relative;
+}
 .outline__title-wrapper {
   position: relative;
   height: 25rem;
@@ -1386,7 +1394,6 @@ span {
       -ms-flex-align: center;
           align-items: center;
   overflow: hidden;
-  background-color: #747474;
 }
 .outline__title-wrapper::before {
   content: "";

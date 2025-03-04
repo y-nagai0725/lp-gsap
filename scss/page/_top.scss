@@ -268,6 +268,7 @@
 }
 
 .brand {
+  position: relative;
   &__title-wrapper {
     position: relative;
     height: 25rem;
@@ -532,6 +533,7 @@
 }
 
 .present {
+  position: relative;
   &__title-wrapper {
     position: relative;
     height: 25rem;
@@ -539,7 +541,6 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background-color: $dammy;
 
     &::before {
       content: "";
@@ -738,6 +739,7 @@
 }
 
 .outline {
+  position: relative;
   &__title-wrapper {
     position: relative;
     height: 25rem;
@@ -745,7 +747,6 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background-color: $dammy;
 
     &::before {
       content: "";

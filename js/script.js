@@ -213,12 +213,31 @@ function setIntroductionSectionAnimation() {
 }
 
 /**
+ * ハンバーガーボタンhideアニメーション設定
+ */
+function setHamburgerButtonHideAnimation() {
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: ".footer",
+      start: "center+=20% bottom",
+      end: "bottom bottom",
+      scrub: 1,
+    },
+  }).to(hamburgerButton, {
+    autoAlpha: 0,
+  }).to(".gnav-sp", {
+    autoAlpha: 0,
+  }, "<");
+}
+
+/**
  * 初期処理
  */
 function init() {
   setOpeningAnimation();
   setFvAnimation();
   setIntroductionSectionAnimation();
+  setHamburgerButtonHideAnimation();
 }
 
 init();
