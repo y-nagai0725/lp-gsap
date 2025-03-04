@@ -25,9 +25,12 @@ hamburgerButton.addEventListener("click", function () {
  * トップへ戻るボタンクリック時処理
  */
 footerBackButton.addEventListener("click", function () {
-  window.scroll({
-    top: 0,
-    behavior: "smooth",
+  gsap.to(window, {
+    duration: 0.8,
+    ease: "",
+    scrollTo: {
+      y: 0,
+    }
   });
 });
 
@@ -49,6 +52,54 @@ function toggleHeader() {
     header.classList.remove("js-hidden");
   }
   currentScrollPosition = newScrollPositon;
+}
+
+/**
+ * アンカーリンクのスムーススクロール設定
+ */
+function setAnchorLinkScrollAnimation() {
+  const links = document.querySelectorAll("[href^='#']");
+  links.forEach(link => {
+    const href = link.getAttribute("href");
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      gsap.to(window, {
+        duration: 0.8,
+        ease: "",
+        scrollTo: {
+          y: href === "#" ? 0 : href,
+        }
+      });
+    });
+  });
+}
+
+/**
+ * ハンバーガーボタンhideアニメーション設定
+ */
+function setHamburgerButtonHideAnimation() {
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: ".footer",
+      start: "center+=20% bottom",
+      end: "bottom bottom",
+      scrub: 1,
+    },
+  }).to(hamburgerButton, {
+    autoAlpha: 0,
+  }).to(".gnav-sp", {
+    autoAlpha: 0,
+  }, "<");
+}
+
+/**
+ * OPアニメーション設定
+ */
+function setOpeningAnimation() {
+  //TODO
+
+  //OPアニメーション終了後に実行
+  showFvImage();
 }
 
 /**
@@ -116,16 +167,6 @@ function showFvImage() {
       each: 0.33,
     }
   });
-}
-
-/**
- * OPアニメーション設定
- */
-function setOpeningAnimation() {
-  //TODO
-
-  //OPアニメーション終了後に実行
-  showFvImage();
 }
 
 /**
@@ -213,31 +254,14 @@ function setIntroductionSectionAnimation() {
 }
 
 /**
- * ハンバーガーボタンhideアニメーション設定
- */
-function setHamburgerButtonHideAnimation() {
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: ".footer",
-      start: "center+=20% bottom",
-      end: "bottom bottom",
-      scrub: 1,
-    },
-  }).to(hamburgerButton, {
-    autoAlpha: 0,
-  }).to(".gnav-sp", {
-    autoAlpha: 0,
-  }, "<");
-}
-
-/**
  * 初期処理
  */
 function init() {
+  setAnchorLinkScrollAnimation()
+  setHamburgerButtonHideAnimation();
   setOpeningAnimation();
   setFvAnimation();
   setIntroductionSectionAnimation();
-  setHamburgerButtonHideAnimation();
 }
 
 init();
