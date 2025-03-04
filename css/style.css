@@ -193,27 +193,52 @@ span {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 40px 30px 0;
+  padding: 40px 30px;
   -webkit-transition: opacity 0.5s ease-out, -webkit-transform 0.5s ease-out;
   transition: opacity 0.5s ease-out, -webkit-transform 0.5s ease-out;
   transition: transform 0.5s ease-out, opacity 0.5s ease-out;
   transition: transform 0.5s ease-out, opacity 0.5s ease-out, -webkit-transform 0.5s ease-out;
   z-index: 100;
 }
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#003986), to(rgba(0, 57, 134, 0)));
+  background-image: linear-gradient(to bottom, #003986, rgba(0, 57, 134, 0));
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+  z-index: -1;
+}
 .header.js-hidden {
   opacity: 0;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
 }
+.header.js-white-mode::before {
+  opacity: 1;
+}
+.header.js-white-mode .header__inner {
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+}
 @media screen and (min-width: 1024px) {
   .header {
-    padding: 80px 80px 0;
+    padding: 80px 80px;
   }
 }
 .header__inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-transition: -webkit-filter 0.3s ease-out;
+  transition: -webkit-filter 0.3s ease-out;
+  transition: filter 0.3s ease-out;
+  transition: filter 0.3s ease-out, -webkit-filter 0.3s ease-out;
 }
 @media screen and (min-width: 1024px) {
   .header__inner {

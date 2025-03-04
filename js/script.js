@@ -55,6 +55,22 @@ function toggleHeader() {
 }
 
 /**
+ * ヘッダーの色モード切り替え
+ */
+function setChangeHeaderModeAnimation() {
+  const brandSection = document.querySelector(".brand");
+  const outlineSection = document.querySelector(".outline");
+
+  [brandSection, outlineSection].forEach(section => {
+    ScrollTrigger.create({
+      trigger: section,
+      start: "top top",
+      toggleClass: { targets: ".header", className: "js-white-mode" },
+    });
+  });
+}
+
+/**
  * アンカーリンクのスムーススクロール設定
  */
 function setAnchorLinkScrollAnimation() {
@@ -272,12 +288,13 @@ function setIntroductionSectionAnimation() {
  * 初期処理
  */
 function init() {
-  setAnchorLinkScrollAnimation()
+  setAnchorLinkScrollAnimation();
   setHamburgerButtonHideAnimation();
   setGnavSpTextAnimation();
   setOpeningAnimation();
   setFvAnimation();
   setIntroductionSectionAnimation();
+  setChangeHeaderModeAnimation();
 }
 
 init();

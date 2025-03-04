@@ -1,27 +1,52 @@
 @use "../global" as *;
 
 .header {
+  $parent: &;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 40px 30px 0;
+  padding: 40px 30px;
   transition:
     transform 0.5s ease-out,
     opacity 0.5s ease-out;
   z-index: 100;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, $blue, rgba(0, 57, 134, 0));
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    z-index: -1;
+  }
 
   &.js-hidden {
     opacity: 0;
     transform: translateY(-100%);
   }
 
+  &.js-white-mode {
+    &::before {
+      opacity: 1;
+    }
+
+    #{$parent}__inner {
+      filter: brightness(0) invert(1);
+    }
+  }
+
   @include pc {
-    padding: 80px 80px 0;
+    padding: 80px 80px;
   }
 
   &__inner {
     display: flex;
+    transition: filter 0.3s ease-out;
 
     @include pc {
       gap: 250px;
