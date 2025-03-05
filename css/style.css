@@ -858,7 +858,7 @@ span {
       -ms-flex-align: center;
           align-items: center;
   overflow: hidden;
-  background-color: #fff;
+  --background-position-value: center 0%;
 }
 .brand__title-wrapper::before {
   content: "";
@@ -870,7 +870,10 @@ span {
   width: 67.5rem;
   height: 67.5rem;
   border-radius: 50%;
-  background-color: #adadad;
+  background-image: url(../images/brand_bg.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: var(--background-position-value);
 }
 @media screen and (min-width: 768px) {
   .brand__title-wrapper {
@@ -892,6 +895,7 @@ span {
 }
 .brand__title {
   margin-right: 0.5em;
+  color: #fff;
   font-family: "Roboto Slab", serif;
   font-size: clamp(44px, 4.4rem, 70px);
   letter-spacing: 0.03em;
@@ -1175,6 +1179,7 @@ span {
       -ms-flex-align: center;
           align-items: center;
   overflow: hidden;
+  --background-position-value: center 0%;
 }
 .present__title-wrapper::before {
   content: "";
@@ -1186,7 +1191,10 @@ span {
   width: 67.5rem;
   height: 67.5rem;
   border-radius: 50%;
-  background-color: #adadad;
+  background-image: url(../images/present_bg.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: var(--background-position-value);
 }
 @media screen and (min-width: 768px) {
   .present__title-wrapper {
@@ -1208,6 +1216,7 @@ span {
 }
 .present__title {
   margin-right: 0.5em;
+  color: #fff;
   font-family: "Roboto Slab", serif;
   font-size: clamp(44px, 4.4rem, 70px);
   letter-spacing: 0.03em;
@@ -1419,6 +1428,7 @@ span {
       -ms-flex-align: center;
           align-items: center;
   overflow: hidden;
+  --background-position-value: center 0%;
 }
 .outline__title-wrapper::before {
   content: "";
@@ -1430,7 +1440,10 @@ span {
   width: 67.5rem;
   height: 67.5rem;
   border-radius: 50%;
-  background-color: #adadad;
+  background-image: url(../images/outline_bg.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: var(--background-position-value);
 }
 @media screen and (min-width: 768px) {
   .outline__title-wrapper {
@@ -1452,6 +1465,7 @@ span {
 }
 .outline__title {
   margin-right: 0.5em;
+  color: #fff;
   font-family: "Roboto Slab", serif;
   font-size: clamp(44px, 4.4rem, 70px);
   letter-spacing: 0.03em;

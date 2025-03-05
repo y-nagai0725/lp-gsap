@@ -276,7 +276,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background-color: $white;
+    --background-position-value: center 0%;
 
     &::before {
       content: "";
@@ -287,7 +287,10 @@
       width: 67.5rem;
       height: 67.5rem;
       border-radius: 50%;
-      background-color: $dammy2;
+      background-image: url(../images/brand_bg.png);
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      background-position: var(--background-position-value);
     }
 
     @include tab {
@@ -311,6 +314,7 @@
 
   &__title {
     margin-right: 0.5em;
+    color: $white;
     font-family: $roboto-slab;
     font-size: clamp(44px, 4.4rem, 70px);
     letter-spacing: 0.03em;
@@ -541,6 +545,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    --background-position-value: center 0%;
 
     &::before {
       content: "";
@@ -551,7 +556,10 @@
       width: 67.5rem;
       height: 67.5rem;
       border-radius: 50%;
-      background-color: $dammy2;
+      background-image: url(../images/present_bg.png);
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      background-position: var(--background-position-value);
     }
 
     @include tab {
@@ -575,6 +583,7 @@
 
   &__title {
     margin-right: 0.5em;
+    color: $white;
     font-family: $roboto-slab;
     font-size: clamp(44px, 4.4rem, 70px);
     letter-spacing: 0.03em;
@@ -747,6 +756,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    --background-position-value: center 0%;
 
     &::before {
       content: "";
@@ -757,7 +767,10 @@
       width: 67.5rem;
       height: 67.5rem;
       border-radius: 50%;
-      background-color: $dammy2;
+      background-image: url(../images/outline_bg.png);
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      background-position: var(--background-position-value);
     }
 
     @include tab {
@@ -781,6 +794,7 @@
 
   &__title {
     margin-right: 0.5em;
+    color: $white;
     font-family: $roboto-slab;
     font-size: clamp(44px, 4.4rem, 70px);
     letter-spacing: 0.03em;

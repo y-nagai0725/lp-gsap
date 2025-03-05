@@ -60,13 +60,22 @@ function toggleHeader() {
 function setChangeHeaderModeAnimation() {
   const brandSection = document.querySelector(".brand");
   const outlineSection = document.querySelector(".outline");
-
-  [brandSection, outlineSection].forEach(section => {
-    ScrollTrigger.create({
-      trigger: section,
-      start: "top top",
-      toggleClass: { targets: ".header", className: "js-white-mode" },
+  const changeHeaderMode = () => {
+    [brandSection, outlineSection].forEach(section => {
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top top",
+        toggleClass: { targets: ".header", className: "js-white-mode" },
+      });
     });
+  };
+
+  mm.add("(max-width: 1023px)", () => {
+    changeHeaderMode();
+  });
+
+  mm.add("(min-width: 1024px)", () => {
+    changeHeaderMode();
   });
 }
 
@@ -285,6 +294,84 @@ function setIntroductionSectionAnimation() {
 }
 
 /**
+ * Brandセクションのアニメーション設定
+ */
+function setBrandSectionAnimation() {
+  const brandTitleWrapper = document.querySelector(".brand__title-wrapper");
+  const animateBackground = (value) => {
+    ScrollTrigger.create({
+      trigger: brandTitleWrapper,
+      start: () => "top bottom",
+      invalidateOnRefresh: true,
+      onUpdate: (self) => {
+        const backgroundPositionValue = "center -" + (self.progress * value) + "%";
+        brandTitleWrapper.style.setProperty("--background-position-value", backgroundPositionValue);
+      },
+    });
+  };
+
+  mm.add("(max-width: 1023px)", () => {
+    animateBackground(15);
+  });
+
+  mm.add("(min-width: 1024px)", () => {
+    animateBackground(20);
+  });
+}
+
+/**
+ * Presentセクションのアニメーション設定
+ */
+function setPresentSectionAnimation() {
+  const presentTitleWrapper = document.querySelector(".present__title-wrapper");
+  const animateBackground = (value) => {
+    ScrollTrigger.create({
+      trigger: presentTitleWrapper,
+      start: () => "top bottom",
+      invalidateOnRefresh: true,
+      onUpdate: (self) => {
+        const backgroundPositionValue = "center -" + (self.progress * value) + "%";
+        presentTitleWrapper.style.setProperty("--background-position-value", backgroundPositionValue);
+      },
+    });
+  };
+
+  mm.add("(max-width: 1023px)", () => {
+    animateBackground(15);
+  });
+
+  mm.add("(min-width: 1024px)", () => {
+    animateBackground(20);
+  });
+}
+
+/**
+ * Outlineセクションのアニメーション設定
+ */
+function setOutlineSectionAnimation() {
+  const outlineTitleWrapper = document.querySelector(".outline__title-wrapper");
+  const animateBackground = (value) => {
+    ScrollTrigger.create({
+      trigger: outlineTitleWrapper,
+      start: () => "top bottom",
+      invalidateOnRefresh: true,
+      onUpdate: (self) => {
+        const backgroundPositionValue = "center -" + (self.progress * value) + "%";
+        outlineTitleWrapper.style.setProperty("--background-position-value", backgroundPositionValue);
+      },
+    });
+  };
+
+  mm.add("(max-width: 1023px)", () => {
+    animateBackground(15);
+  });
+
+  mm.add("(min-width: 1024px)", () => {
+    animateBackground(20);
+  });
+}
+
+/**
  * 初期処理
  */
 function init() {
@@ -294,6 +381,9 @@ function init() {
   setOpeningAnimation();
   setFvAnimation();
   setIntroductionSectionAnimation();
+  setBrandSectionAnimation();
+  setPresentSectionAnimation();
+  setOutlineSectionAnimation();
   setChangeHeaderModeAnimation();
 }
 
