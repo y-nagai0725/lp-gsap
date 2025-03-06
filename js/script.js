@@ -301,12 +301,83 @@ function setBrandSectionAnimation() {
   const animateBackground = (value) => {
     ScrollTrigger.create({
       trigger: brandTitleWrapper,
-      start: () => "top bottom",
+      start: "top bottom",
       invalidateOnRefresh: true,
       onUpdate: (self) => {
         const backgroundPositionValue = "center -" + (self.progress * value) + "%";
         brandTitleWrapper.style.setProperty("--background-position-value", backgroundPositionValue);
       },
+    });
+  };
+
+  const brandListWrapper = document.querySelector(".brand__list-wrapper");
+  const animateListWrapper = () => {
+    gsap.fromTo(brandListWrapper, {
+      yPercent: 40,
+    }, {
+      yPercent: -80,
+      ease: "",
+      scrollTrigger: {
+        trigger: brandListWrapper,
+        start: "top center+=20%",
+        end: "bottom top",
+        scrub: 1,
+        invalidateOnRefresh: true,
+      }
+    });
+  };
+
+  const brandListTop = document.querySelectorAll(".brand__list.top");
+  const brandListBottom = document.querySelectorAll(".brand__list.bottom");
+  const animateListItem = () => {
+    [brandListTop, brandListBottom].forEach(list => {
+      gsap.fromTo(list, {
+        rotationX: -3,
+        opacity: 1.5,
+      }, {
+        rotationX: 6,
+        opacity: 0,
+        ease: "",
+        scrollTrigger: {
+          trigger: list,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+          invalidateOnRefresh: true,
+        }
+      });
+    });
+  };
+
+  const brandOverviewArea = document.querySelector(".brand__overview-area");
+  const animateOverviewArea = () => {
+    gsap.fromTo(brandOverviewArea, {
+      scale: 1.15,
+      yPercent: -40,
+    }, {
+      scale: 1,
+      yPercent: -200,
+      ease: "",
+      scrollTrigger: {
+        trigger: brandOverviewArea,
+        start: "top bottom",
+        end: "bottom center",
+        scrub: 1,
+        invalidateOnRefresh: true,
+      }
+    });
+  };
+
+  const brandSection = document.querySelector(".brand");
+  const animateBrandSection = () => {
+    ScrollTrigger.create({
+      trigger: ".brand__text-area",
+      start: "bottom top",
+      end: () => "+=" + brandSection.offsetHeight,
+      pin: brandSection,
+      pinSpacing: false,
+      aniticipatePin: 1,
+      invalidateOnRefresh: true,
     });
   };
 
@@ -316,6 +387,10 @@ function setBrandSectionAnimation() {
 
   mm.add("(min-width: 1024px)", () => {
     animateBackground(20);
+    animateListWrapper();
+    animateListItem();
+    animateOverviewArea();
+    animateBrandSection();
   });
 }
 
@@ -327,7 +402,7 @@ function setPresentSectionAnimation() {
   const animateBackground = (value) => {
     ScrollTrigger.create({
       trigger: presentTitleWrapper,
-      start: () => "top bottom",
+      start: "top bottom",
       invalidateOnRefresh: true,
       onUpdate: (self) => {
         const backgroundPositionValue = "center -" + (self.progress * value) + "%";
@@ -353,7 +428,7 @@ function setOutlineSectionAnimation() {
   const animateBackground = (value) => {
     ScrollTrigger.create({
       trigger: outlineTitleWrapper,
-      start: () => "top bottom",
+      start: "top bottom",
       invalidateOnRefresh: true,
       onUpdate: (self) => {
         const backgroundPositionValue = "center -" + (self.progress * value) + "%";
