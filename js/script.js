@@ -443,8 +443,8 @@ function setPresentSectionAnimation() {
  * Outlineセクションのアニメーション設定
  */
 function setOutlineSectionAnimation() {
-  const outlineTitleWrapper = document.querySelector(".outline__title-wrapper");
   const animateBackground = (value) => {
+    const outlineTitleWrapper = document.querySelector(".outline__title-wrapper");
     ScrollTrigger.create({
       trigger: outlineTitleWrapper,
       start: "top bottom",
@@ -456,12 +456,30 @@ function setOutlineSectionAnimation() {
     });
   };
 
+  const animateList = () => {
+    const outlineList = document.querySelector(".outline__list-wrapper");
+    gsap.fromTo(outlineList, {
+      scale: 1.08,
+    }, {
+      scale: 1,
+      ease: "",
+      scrollTrigger: {
+        trigger: outlineList,
+        start: "top bottom",
+        end: () => "+=" + outlineList.offsetHeight,
+        scrub: 1,
+        invalidateOnRefresh: true,
+      }
+    });
+  };
+
   mm.add("(max-width: 1023px)", () => {
     animateBackground(15);
   });
 
   mm.add("(min-width: 1024px)", () => {
     animateBackground(20);
+    animateList();
   });
 }
 
