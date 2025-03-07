@@ -310,32 +310,29 @@ function setBrandSectionAnimation() {
     });
   };
 
-  const brandListWrapper = document.querySelector(".brand__list-wrapper");
-  const animateListWrapper = () => {
-    gsap.fromTo(brandListWrapper, {
-      yPercent: 40,
-    }, {
-      yPercent: -80,
-      ease: "",
-      scrollTrigger: {
-        trigger: brandListWrapper,
-        start: "top center+=20%",
-        end: "bottom top",
-        scrub: 1,
-        invalidateOnRefresh: true,
-      }
+  const brandSection = document.querySelector(".brand");
+  const animateBrandSection = () => {
+    ScrollTrigger.create({
+      trigger: brandSection,
+      start: "bottom bottom",
+      end: () => "+=" + brandSection.offsetHeight,
+      pin: brandSection,
+      pinSpacing: false,
+      aniticipatePin: 1,
+      invalidateOnRefresh: true,
     });
   };
 
-  const brandListTop = document.querySelectorAll(".brand__list.top");
-  const brandListBottom = document.querySelectorAll(".brand__list.bottom");
+  const brandList = document.querySelectorAll(".brand__list");
   const animateListItem = () => {
-    [brandListTop, brandListBottom].forEach(list => {
+    brandList.forEach(list => {
       gsap.fromTo(list, {
+        yPercent: 20,
         rotationX: -3,
-        opacity: 1.5,
+        opacity: 5,
       }, {
-        rotationX: 6,
+        yPercent: -40,
+        rotationX: 3,
         opacity: 0,
         ease: "",
         scrollTrigger: {
@@ -353,10 +350,10 @@ function setBrandSectionAnimation() {
   const animateOverviewArea = () => {
     gsap.fromTo(brandOverviewArea, {
       scale: 1.15,
-      yPercent: -40,
+      yPercent: 30,
     }, {
       scale: 1,
-      yPercent: -200,
+      yPercent: 0,
       ease: "",
       scrollTrigger: {
         trigger: brandOverviewArea,
@@ -368,26 +365,12 @@ function setBrandSectionAnimation() {
     });
   };
 
-  const brandSection = document.querySelector(".brand");
-  const animateBrandSection = () => {
-    ScrollTrigger.create({
-      trigger: ".brand__text-area",
-      start: "bottom top",
-      end: () => "+=" + brandSection.offsetHeight,
-      pin: brandSection,
-      pinSpacing: false,
-      aniticipatePin: 1,
-      invalidateOnRefresh: true,
-    });
-  };
-
   mm.add("(max-width: 1023px)", () => {
     animateBackground(15);
   });
 
   mm.add("(min-width: 1024px)", () => {
     animateBackground(20);
-    animateListWrapper();
     animateListItem();
     animateOverviewArea();
     animateBrandSection();
