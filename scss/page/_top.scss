@@ -1,7 +1,7 @@
 @use "../global" as *;
 
 .main {
-  overflow-x: hidden;
+  overflow: hidden;
   background-color: $white;
 }
 
@@ -542,6 +542,7 @@
   &__title-wrapper {
     position: relative;
     height: 25rem;
+    background-color: $dammy;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -574,6 +575,7 @@
 
     @include pc {
       height: 70rem;
+      background-color: transparent;
 
       &::before {
         width: 345.6rem;
@@ -663,6 +665,7 @@
   &__list-wrapper {
     display: grid;
     gap: 80px;
+    position: relative;
   }
 
   &__list {

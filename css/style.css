@@ -554,7 +554,7 @@ span {
 }
 
 .main {
-  overflow-x: hidden;
+  overflow: hidden;
   background-color: #fff;
 }
 
@@ -1171,6 +1171,7 @@ span {
 .present__title-wrapper {
   position: relative;
   height: 25rem;
+  background-color: #747474;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1210,6 +1211,7 @@ span {
 @media screen and (min-width: 1024px) {
   .present__title-wrapper {
     height: 70rem;
+    background-color: transparent;
   }
   .present__title-wrapper::before {
     width: 345.6rem;
@@ -1317,6 +1319,7 @@ span {
 .present__list-wrapper {
   display: grid;
   gap: 80px;
+  position: relative;
 }
 .present__list {
   padding: 30px;

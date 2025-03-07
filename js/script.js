@@ -381,8 +381,8 @@ function setBrandSectionAnimation() {
  * Presentセクションのアニメーション設定
  */
 function setPresentSectionAnimation() {
-  const presentTitleWrapper = document.querySelector(".present__title-wrapper");
   const animateBackground = (value) => {
+    const presentTitleWrapper = document.querySelector(".present__title-wrapper");
     ScrollTrigger.create({
       trigger: presentTitleWrapper,
       start: "top bottom",
@@ -394,12 +394,48 @@ function setPresentSectionAnimation() {
     });
   };
 
+  const animateListItem = () => {
+    const presentList = document.querySelectorAll(".present__list");
+    const presentListWrapper = document.querySelector(".present__list-wrapper");
+    const listGap = Number(getComputedStyle(presentListWrapper).gap.replace("px", ""));
+    presentList.forEach(list => {
+      gsap.to(list, {
+        opacity: 0,
+        yPercent: 25,
+        scale: 0.9,
+        ease: "",
+        scrollTrigger: {
+          trigger: list,
+          start: "top top",
+          end: () => "+=" + (list.offsetHeight + listGap),
+          scrub: 1,
+          invalidateOnRefresh: true,
+        }
+      });
+    });
+  };
+
+  const animatePresentSection = () => {
+    const presentSection = document.querySelector(".present");
+    ScrollTrigger.create({
+      trigger: presentSection,
+      start: "bottom bottom",
+      end: () => "+=" + presentSection.offsetHeight,
+      pin: true,
+      pinSpacing: false,
+      aniticipatePin: 1,
+      invalidateOnRefresh: true,
+    });
+  };
+
   mm.add("(max-width: 1023px)", () => {
     animateBackground(15);
   });
 
   mm.add("(min-width: 1024px)", () => {
     animateBackground(20);
+    animateListItem();
+    animatePresentSection();
   });
 }
 
