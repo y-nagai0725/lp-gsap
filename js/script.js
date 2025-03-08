@@ -136,10 +136,41 @@ function setGnavSpTextAnimation() {
  * OPアニメーション設定
  */
 function setOpeningAnimation() {
-  //TODO
+  //スクロール禁止
+  document.addEventListener('touchmove', noScroll, { passive: false });
+  document.addEventListener('wheel', noScroll, { passive: false });
 
-  //OPアニメーション終了後に実行
-  showFvImage();
+  const opening = document.querySelector(".opening");
+  const openingStartBg = document.querySelector(".opening__start-bg");
+  const openingEndBg = document.querySelector(".opening__end-bg");
+  const openingLogo = document.querySelector(".opening__logo");
+
+  gsap.timeline().to(openingEndBg, {
+    duration: 0.6,
+    ease: "",
+    clipPath: "inset(0 0 0 0%)",
+  }).add(() => {
+    openingLogo.classList.add("js-white-mode");
+  }, "<+=0.2").to(openingEndBg, {
+    duration: 0.6,
+    ease: "",
+    clipPath: "inset(0 100% 0 0)",
+  }, ">1.2").to(openingStartBg, {
+    duration: 0.6,
+    ease: "",
+    clipPath: "inset(0 100% 0 0)",
+    onComplete: () => {
+      gsap.to(opening, {
+        display: "none",
+      })
+    },
+  }, "<").add(() => {
+    showFvImage();
+  }, "<").add(() => {
+    //スクロール禁止を解除
+    document.removeEventListener('touchmove', noScroll);
+    document.removeEventListener('wheel', noScroll);
+  });
 }
 
 /**
@@ -481,6 +512,14 @@ function setOutlineSectionAnimation() {
     animateBackground(20);
     animateList();
   });
+}
+
+/**
+ * イベント処理禁止用
+ * @param {*} e
+ */
+function noScroll(e) {
+  e.preventDefault();
 }
 
 /**
