@@ -211,10 +211,14 @@ function setFvAnimation() {
       scrub: 1,
       invalidateOnRefresh: true,
     },
-  }).to(".picture-right", {
+  }).fromTo(".picture-right", {
+    rotation: 0,
+  }, {
     rotation: 180,
     ease: "linear",
-  }).to(".picture-left", {
+  }).fromTo(".picture-left", {
+    rotation: 0,
+  }, {
     rotation: -180,
     ease: "linear",
   }, "<");
