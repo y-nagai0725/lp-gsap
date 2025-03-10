@@ -540,6 +540,28 @@ function enableScroll() {
 }
 
 /**
+ * 慣性スクロール用Lenis設定
+ */
+function setLenis() {
+  const easeOutQuart = (x) => {
+    return 1 - Math.pow(1 - x, 4);
+  };
+
+  const lenis = new Lenis({
+    lerp: 0.2,
+    duration: 1,
+    easing: easeOutQuart,
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+}
+
+/**
  * 初期処理
  */
 function init() {
@@ -553,6 +575,7 @@ function init() {
   setPresentSectionAnimation();
   setOutlineSectionAnimation();
   setChangeHeaderModeAnimation();
+  setLenis();
 }
 
 init();
