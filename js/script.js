@@ -331,8 +331,8 @@ function setIntroductionSectionAnimation() {
  * Brandセクションのアニメーション設定
  */
 function setBrandSectionAnimation() {
-  const brandTitleWrapper = document.querySelector(".brand__title-wrapper");
   const animateBackground = (value) => {
+    const brandTitleWrapper = document.querySelector(".brand__title-wrapper");
     ScrollTrigger.create({
       trigger: brandTitleWrapper,
       start: "top bottom",
@@ -344,8 +344,8 @@ function setBrandSectionAnimation() {
     });
   };
 
-  const brandSection = document.querySelector(".brand");
   const animateBrandSection = () => {
+    const brandSection = document.querySelector(".brand");
     ScrollTrigger.create({
       trigger: brandSection,
       start: "bottom bottom",
@@ -357,8 +357,8 @@ function setBrandSectionAnimation() {
     });
   };
 
-  const brandList = document.querySelectorAll(".brand__list");
   const animateListItem = () => {
+    const brandList = document.querySelectorAll(".brand__list");
     brandList.forEach(list => {
       gsap.fromTo(list, {
         yPercent: 20,
@@ -380,8 +380,8 @@ function setBrandSectionAnimation() {
     });
   };
 
-  const brandOverviewArea = document.querySelector(".brand__overview-area");
   const animateOverviewArea = () => {
+    const brandOverviewArea = document.querySelector(".brand__overview-area");
     gsap.fromTo(brandOverviewArea, {
       scale: 1.15,
       yPercent: 30,
