@@ -345,7 +345,7 @@ function setBrandSectionAnimation() {
   };
 
   const animateBrandSection = () => {
-    const brandSection = document.querySelector(".brand");
+    const brandSection = document.querySelector(".brand__pin-container");
     ScrollTrigger.create({
       trigger: brandSection,
       start: "bottom bottom",
@@ -450,7 +450,7 @@ function setPresentSectionAnimation() {
   };
 
   const animatePresentSection = () => {
-    const presentSection = document.querySelector(".present");
+    const presentSection = document.querySelector(".present__pin-container");
     ScrollTrigger.create({
       trigger: presentSection,
       start: "bottom bottom",
