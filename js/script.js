@@ -1,19 +1,19 @@
-const hamburgerButton = document.querySelector(".hamburger-button__button");
-const gnavSpList = document.querySelector(".gnav-sp__list-wrapper");
-const gnavSpListItems = document.querySelectorAll(".gnav-sp__list");
-const header = document.querySelector(".header");
-const footerBackButton = document.querySelector(".footer__back-button");
-const horizontalScrollValue = 900;
-
-//GSAPメディアクエリ
+/**
+ * GSAPメディアクエリ
+ */
 const mm = gsap.matchMedia();
 
+/**
+ * 現在のスクロール位置(y座標)
+ */
 let currentScrollPosition = 0;
 
 /**
  * ハンバーガーメニュークリックイベント
  */
-hamburgerButton.addEventListener("click", function () {
+document.querySelector(".hamburger-button__button").addEventListener("click", function () {
+  const gnavSpList = document.querySelector(".gnav-sp__list-wrapper");
+  const gnavSpListItems = document.querySelectorAll(".gnav-sp__list");
   this.classList.toggle("js-actived");
   gnavSpList.classList.toggle("js-actived");
   gnavSpListItems.forEach(item => {
@@ -24,7 +24,7 @@ hamburgerButton.addEventListener("click", function () {
 /**
  * トップへ戻るボタンクリック時処理
  */
-footerBackButton.addEventListener("click", function () {
+document.querySelector(".footer__back-button").addEventListener("click", function () {
   gsap.to(window, {
     duration: 0.8,
     ease: "",
@@ -45,6 +45,7 @@ window.addEventListener("scroll", function () {
  * ヘッダー表示切り替え
  */
 function toggleHeader() {
+  const header = document.querySelector(".header");
   const newScrollPositon = window.scrollY;
   if (newScrollPositon > currentScrollPosition) {
     header.classList.add("js-hidden");
@@ -110,7 +111,7 @@ function setHamburgerButtonHideAnimation() {
       end: "bottom bottom",
       scrub: 1,
     },
-  }).to(hamburgerButton, {
+  }).to(".hamburger-button__button", {
     autoAlpha: 0,
   }).to(".gnav-sp", {
     autoAlpha: 0,
@@ -254,6 +255,7 @@ function setIntroductionSectionAnimation() {
   const introductionPicture_2 = document.querySelector(".introduction__picture-2");
   const introductionPicture_3 = document.querySelector(".introduction__picture-3");
   const introductionPicture_4 = document.querySelector(".introduction__picture-4");
+  const horizontalScrollValue = 900;
 
   //sp,tab,pc共通
   gsap.set(introductionTitle, {
