@@ -136,26 +136,23 @@ function setGnavSpTextAnimation() {
  * OPアニメーション設定
  */
 function setOpeningAnimation() {
-  //スクロール禁止
-  document.addEventListener('touchmove', noScroll, { passive: false });
-  document.addEventListener('wheel', noScroll, { passive: false });
-
   const opening = document.querySelector(".opening");
   const openingStartBg = document.querySelector(".opening__start-bg");
   const openingEndBg = document.querySelector(".opening__end-bg");
+  const openingLogoWrapper = document.querySelector(".opening__logo-wrapper");
   const openingLogo = document.querySelector(".opening__logo");
 
+  //スクロール禁止
+  disableScroll();
+
+  //背景、ロゴ表示アニメーション
   gsap.timeline().to(openingEndBg, {
     duration: 0.6,
     ease: "",
     clipPath: "inset(0 0 0 0%)",
   }).add(() => {
     openingLogo.classList.add("js-white-mode");
-  }, "<+=0.2").to(openingEndBg, {
-    duration: 0.6,
-    ease: "",
-    clipPath: "inset(0 100% 0 0)",
-  }, ">1.2").to(openingStartBg, {
+  }, "<0.2").to([openingEndBg, openingStartBg, openingLogoWrapper], {
     duration: 0.6,
     ease: "",
     clipPath: "inset(0 100% 0 0)",
@@ -164,13 +161,13 @@ function setOpeningAnimation() {
         display: "none",
       })
     },
-  }, "<").add(() => {
+  }, ">1").add(() => {
+    //FVの画像表示処理
     showFvImage();
-  }, "<").add(() => {
-    //スクロール禁止を解除
-    document.removeEventListener('touchmove', noScroll);
-    document.removeEventListener('wheel', noScroll);
-  });
+
+    //スクロール禁止解除
+    enableScroll();
+  }, "<");
 }
 
 /**
@@ -240,7 +237,7 @@ function showFvImage() {
     ease: "",
     stagger: {
       each: 0.33,
-    }
+    },
   });
 }
 
@@ -519,11 +516,27 @@ function setOutlineSectionAnimation() {
 }
 
 /**
- * イベント処理禁止用
+ * イベント処理禁止
  * @param {*} e
  */
-function noScroll(e) {
+function noEvent(e) {
   e.preventDefault();
+}
+
+/**
+ * スクロール禁止
+ */
+function disableScroll() {
+  document.addEventListener('touchmove', noEvent, { passive: false });
+  document.addEventListener('wheel', noEvent, { passive: false });
+}
+
+/**
+ * スクロール禁止を解除
+ */
+function enableScroll() {
+  document.removeEventListener('touchmove', noEvent);
+  document.removeEventListener('wheel', noEvent);
 }
 
 /**
