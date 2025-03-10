@@ -163,7 +163,7 @@ body {
   font-family: "Noto Sans JP", serif;
   font-weight: 400;
   line-height: 1;
-  color: #000;
+  color: #003986;
 }
 
 a,
@@ -387,7 +387,7 @@ span {
           align-items: center;
   gap: 30px;
   position: relative;
-  background-color: #747474;
+  background-color: #003986;
 }
 @media screen and (min-width: 1024px) {
   .footer__inner {
@@ -445,6 +445,7 @@ span {
   }
 }
 .footer__copyright {
+  color: #fff;
   font-size: clamp(10px, 1rem, 13px);
   line-height: 1.5;
   text-align: center;
@@ -493,7 +494,7 @@ span {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #747474;
+  background-color: #d7ca25;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -812,6 +813,7 @@ span {
   }
 }
 .introduction__title {
+  color: #d7ca25;
   font-family: "Roboto Slab", serif;
   font-size: clamp(75px, 7.5rem, 122px);
   letter-spacing: 0.03em;
@@ -965,7 +967,7 @@ span {
   padding: 0 30px;
   padding-top: 90px;
   padding-bottom: 160px;
-  background-color: #747474;
+  background-color: #003986;
 }
 @media screen and (min-width: 1024px) {
   .brand__inner {
@@ -1009,6 +1011,7 @@ span {
   }
 }
 .brand__heading {
+  color: #fff;
   font-size: clamp(24px, 2.4rem, 30px);
   font-weight: 700;
   line-height: 2;
@@ -1025,6 +1028,7 @@ span {
   }
 }
 .brand__text {
+  color: #fff;
   font-size: clamp(16px, 1.6rem, 22px);
   line-height: 2;
 }
@@ -1178,10 +1182,11 @@ span {
   display: grid;
   place-content: center;
   border-radius: 100vmax;
+  color: #fff;
   font-family: "Roboto Slab", serif;
   font-weight: 600;
   font-size: clamp(20px, 2rem, 28px);
-  background-color: #747474;
+  background-color: #6ac2cf;
 }
 @media screen and (min-width: 768px) {
   .brand__overview-link {
@@ -1219,7 +1224,7 @@ span {
 .present__title-wrapper {
   position: relative;
   height: 25rem;
-  background-color: #747474;
+  background-color: #003986;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1290,7 +1295,7 @@ span {
   padding: 0 30px;
   padding-top: 90px;
   padding-bottom: 160px;
-  background-color: #747474;
+  background-color: #6ac2cf;
 }
 @media screen and (min-width: 1024px) {
   .present__inner {
@@ -1334,6 +1339,7 @@ span {
   }
 }
 .present__heading {
+  color: #fff;
   font-size: clamp(24px, 2.4rem, 30px);
   font-weight: 700;
   line-height: 2;
@@ -1350,6 +1356,7 @@ span {
   }
 }
 .present__text {
+  color: #fff;
   font-size: clamp(16px, 1.6rem, 22px);
   line-height: 2;
 }
@@ -1409,7 +1416,7 @@ span {
             transform: translate(-50%, -50%);
     width: 1px;
     height: calc(100% - 80px);
-    background-color: #000;
+    background-color: rgba(110, 110, 110, 0.25);
   }
 }
 .present__list-picture {
@@ -1471,7 +1478,7 @@ span {
 .outline__title-wrapper {
   position: relative;
   height: 25rem;
-  background-color: #747474;
+  background-color: #6ac2cf;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1542,7 +1549,7 @@ span {
   padding: 0 30px;
   padding-top: 90px;
   padding-bottom: 160px;
-  background-color: #747474;
+  background-color: #003986;
 }
 @media screen and (min-width: 1024px) {
   .outline__inner {
@@ -1586,6 +1593,7 @@ span {
   }
 }
 .outline__heading {
+  color: #fff;
   font-size: clamp(24px, 2.4rem, 30px);
   font-weight: 700;
   line-height: 2;
@@ -1602,6 +1610,7 @@ span {
   }
 }
 .outline__text {
+  color: #fff;
   font-size: clamp(16px, 1.6rem, 22px);
   line-height: 2;
 }
@@ -1651,7 +1660,7 @@ span {
   left: 0;
   width: 100%;
   height: 1px;
-  background-color: #000;
+  background-color: rgba(110, 110, 110, 0.25);
 }
 @media screen and (min-width: 1440px) {
   .outline__list {
@@ -1796,7 +1805,7 @@ span {
   height: 2px;
   -webkit-transform-origin: center;
           transform-origin: center;
-  background-color: #6AC2CF;
+  background-color: #6ac2cf;
   -webkit-transition: opacity 0.4s ease-out, -webkit-transform 0.4s ease-out;
   transition: opacity 0.4s ease-out, -webkit-transform 0.4s ease-out;
   transition: transform 0.4s ease-out, opacity 0.4s ease-out;
