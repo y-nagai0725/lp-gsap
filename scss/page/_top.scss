@@ -610,7 +610,7 @@
       width: 67.5rem;
       height: 67.5rem;
       border-radius: 50%;
-      background-image: url(../images/present_bg.png);
+      background-image: url(../images/present_bg-sp.jpg);
       background-size: 100% auto;
       background-repeat: no-repeat;
       background-position: var(--background-position-value);
@@ -622,6 +622,7 @@
       &::before {
         width: 138rem;
         height: 138rem;
+        background-image: url(../images/present_bg-tab.jpg);
       }
     }
 
@@ -632,6 +633,7 @@
       &::before {
         width: 345.6rem;
         height: 345.6rem;
+        background-image: url(../images/present_bg-pc.jpg);
       }
     }
   }
@@ -826,7 +828,7 @@
       width: 67.5rem;
       height: 67.5rem;
       border-radius: 50%;
-      background-image: url(../images/outline_bg.png);
+      background-image: url(../images/outline_bg-sp.jpg);
       background-size: 100% auto;
       background-repeat: no-repeat;
       background-position: var(--background-position-value);
@@ -838,6 +840,7 @@
       &::before {
         width: 138rem;
         height: 138rem;
+        background-image: url(../images/outline_bg-tab.jpg);
       }
     }
 
@@ -848,6 +851,7 @@
       &::before {
         width: 345.6rem;
         height: 345.6rem;
+        background-image: url(../images/outline_bg-pc.jpg);
       }
     }
   }
