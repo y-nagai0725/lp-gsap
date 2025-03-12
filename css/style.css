@@ -920,7 +920,7 @@ span {
   width: 67.5rem;
   height: 67.5rem;
   border-radius: 50%;
-  background-image: url(../images/brand_bg.png);
+  background-image: url(../images/brand_bg-sp.jpg);
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: var(--background-position-value);
@@ -932,6 +932,7 @@ span {
   .brand__title-wrapper::before {
     width: 138rem;
     height: 138rem;
+    background-image: url(../images/brand_bg-tab.jpg);
   }
 }
 @media screen and (min-width: 1024px) {
@@ -941,6 +942,7 @@ span {
   .brand__title-wrapper::before {
     width: 345.6rem;
     height: 345.6rem;
+    background-image: url(../images/brand_bg-pc.jpg);
   }
 }
 .brand__title {
