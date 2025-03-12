@@ -55,7 +55,6 @@
   &__logo-link {
     width: clamp(150px, 15rem, 300px);
     aspect-ratio: 150 / 32;
-    background-color: $dammy2;
 
     @include tab {
       width: clamp(300px, 30rem, 400px);
@@ -67,6 +66,7 @@
   }
 
   &__logo-image {
+    width: 100%;
   }
 
   &__copyright {

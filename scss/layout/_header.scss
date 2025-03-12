@@ -35,8 +35,18 @@
       opacity: 1;
     }
 
-    #{$parent}__inner {
+    #{$parent}__inner .gnav-pc {
       filter: brightness(0) invert(1);
+    }
+
+    #{$parent}__logo-image {
+      &.logo-blue {
+        opacity: 0;
+      }
+
+      &.logo-white {
+        opacity: 1;
+      }
     }
   }
 
@@ -46,15 +56,20 @@
 
   &__inner {
     display: flex;
-    transition: filter 0.3s ease-out;
 
     @include pc {
       gap: 250px;
+
+      .gnav-pc {
+        transition: filter 0.3s ease-out;
+      }
     }
   }
 
   &__logo-link {
+    position: relative;
     width: 150px;
+    aspect-ratio: 150 / 40;
 
     @include pc {
       width: 218px;
@@ -62,5 +77,15 @@
   }
 
   &__logo-image {
+    position: absolute;
+    transition: opacity 0.3s ease-out;
+
+    &.logo-blue {
+      opacity: 1;
+    }
+
+    &.logo-white {
+      opacity: 0;
+    }
   }
 }
