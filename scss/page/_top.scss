@@ -1008,7 +1008,7 @@
       transform: translateY(-50%);
       height: 50%;
       aspect-ratio: 1;
-      background-color: $dammy2;
+      background: url(../images/outline_icon.svg) center center / contain no-repeat;
     }
 
     @include tab {

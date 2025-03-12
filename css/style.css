@@ -1723,7 +1723,7 @@ span {
           transform: translateY(-50%);
   height: 50%;
   aspect-ratio: 1;
-  background-color: #adadad;
+  background: url(../images/outline_icon.svg) center center/contain no-repeat;
 }
 @media screen and (min-width: 768px) {
   .outline__list-title {
