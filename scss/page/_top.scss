@@ -295,8 +295,11 @@
   &__picture-3,
   &__picture-4 {
     aspect-ratio: 150 / 210;
-    background-color: $dammy;
     position: relative;
+
+    img {
+      object-fit: contain;
+    }
   }
 
   &__picture-1,

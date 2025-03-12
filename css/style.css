@@ -899,8 +899,11 @@ span {
 }
 .introduction__picture-1, .introduction__picture-2, .introduction__picture-3, .introduction__picture-4 {
   aspect-ratio: 150/210;
-  background-color: #747474;
   position: relative;
+}
+.introduction__picture-1 img, .introduction__picture-2 img, .introduction__picture-3 img, .introduction__picture-4 img {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .introduction__picture-1, .introduction__picture-3 {
   top: 50px;
