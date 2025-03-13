@@ -756,34 +756,31 @@ span {
 }
 .fv__picture-1 {
   width: 70.7106781187%;
-  background-color: #747474;
 }
 .fv__picture-2 {
-  width: 50.5076272276%;
-  background-color: #adadad;
+  width: 45.4568645048%;
 }
 @media screen and (min-width: 768px) {
   .fv__picture-2 {
-    width: 52.2644142616%;
+    width: 45.5007841807%;
   }
 }
 @media screen and (min-width: 1024px) {
   .fv__picture-2 {
-    width: 49.4443087597%;
+    width: 45.5631963516%;
   }
 }
 .fv__picture-3 {
-  width: 30.3045763366%;
-  background-color: #ebebeb;
+  width: 22.9809703886%;
 }
 @media screen and (min-width: 768px) {
   .fv__picture-3 {
-    width: 33.8181504046%;
+    width: 22.9809703886%;
   }
 }
 @media screen and (min-width: 1024px) {
   .fv__picture-3 {
-    width: 28.1779394007%;
+    width: 23.0208448311%;
   }
 }
 

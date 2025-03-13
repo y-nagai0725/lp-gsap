@@ -166,32 +166,29 @@
 
   &__picture-1 {
     width: calc(100% / sqrt(2));
-    background-color: $dammy;
   }
 
   &__picture-2 {
-    width: calc(40% / (56 * sqrt(2)) * 100);
-    background-color: $dammy2;
+    width: calc(36% / (56 * sqrt(2)) * 100);
 
     @include tab {
-      width: calc(68% / (92 * sqrt(2)) * 100);
+      width: calc(59.2% / (92 * sqrt(2)) * 100);
     }
 
     @include pc {
-      width: calc(93% / (133 * sqrt(2)) * 100);
+      width: calc(85.7% / (133 * sqrt(2)) * 100);
     }
   }
 
   &__picture-3 {
-    width: calc(24% / (56 * sqrt(2)) * 100);
-    background-color: $dammy3;
+    width: calc(18.2% / (56 * sqrt(2)) * 100);
 
     @include tab {
-      width: calc(44% / (92 * sqrt(2)) * 100);
+      width: calc(29.9% / (92 * sqrt(2)) * 100);
     }
 
     @include pc {
-      width: calc(53% / (133 * sqrt(2)) * 100);
+      width: calc(43.3% / (133 * sqrt(2)) * 100);
     }
   }
 }
