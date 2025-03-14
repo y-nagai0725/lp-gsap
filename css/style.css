@@ -1186,8 +1186,6 @@ span {
 .brand__overview-logo {
   margin-bottom: 30px;
   width: clamp(200px, 20rem, 400px);
-  aspect-ratio: 200/42;
-  background-color: #747474;
 }
 @media screen and (min-width: 768px) {
   .brand__overview-logo {
@@ -1207,12 +1205,15 @@ span {
   width: clamp(200px, 20rem, 256px);
   display: grid;
   place-content: center;
+  border: 1px solid #6ac2cf;
   border-radius: 100vmax;
   color: #fff;
   font-family: "Roboto Slab", serif;
   font-weight: 600;
   font-size: clamp(20px, 2rem, 28px);
   background-color: #6ac2cf;
+  -webkit-transition: color 0.3s ease-out, background-color 0.3s ease-out;
+  transition: color 0.3s ease-out, background-color 0.3s ease-out;
 }
 @media screen and (min-width: 768px) {
   .brand__overview-link {
@@ -1226,6 +1227,12 @@ span {
     margin-bottom: 0;
     width: clamp(180px, 21rem, 210px);
     font-size: clamp(18px, 2rem, 20px);
+  }
+}
+@media screen and (min-width: 1440px) and (any-hover: hover) {
+  .brand__overview-link:hover {
+    color: #6ac2cf;
+    background-color: #fff;
   }
 }
 .brand__overview-text {
