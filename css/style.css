@@ -1094,7 +1094,7 @@ span {
 .brand__picture {
   aspect-ratio: 1;
   border-radius: 15px;
-  background-color: #adadad;
+  overflow: hidden;
 }
 .brand__overview-area {
   padding: 60px 30px;

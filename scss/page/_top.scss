@@ -464,7 +464,7 @@
   &__picture {
     aspect-ratio: 1;
     border-radius: 15px;
-    background-color: $dammy2;
+    overflow: hidden;
   }
 
   &__overview-area {
