@@ -177,6 +177,7 @@ img {
   display: block;
   -o-object-fit: cover;
      object-fit: cover;
+  width: 100%;
   height: auto;
 }
 
@@ -1458,7 +1459,6 @@ span {
   margin-bottom: 30px;
   width: 100%;
   aspect-ratio: 16/9;
-  background-color: #747474;
 }
 @media screen and (min-width: 768px) {
   .present__list-picture {
