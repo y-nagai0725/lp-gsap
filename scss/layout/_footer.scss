@@ -35,6 +35,17 @@
       background-color: $white;
     }
 
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      aspect-ratio: 1920 / 290;
+      transform: translateY(calc(100% - 1px));
+      background: url(../images/footer_pseudo-element-bg.svg) center center / cover;
+    }
+
     @include tab {
       padding-top: 40px;
       padding-bottom: 80px;
@@ -105,8 +116,6 @@
 
   &__picture {
     width: 100%;
-    aspect-ratio: 375 / 158;
-    background-color: $dammy2;
   }
 
   &__back-button {

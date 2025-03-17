@@ -428,6 +428,17 @@ span {
   height: 1px;
   background-color: #fff;
 }
+.footer__inner::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 1920/290;
+  -webkit-transform: translateY(calc(100% - 1px));
+          transform: translateY(calc(100% - 1px));
+  background: url(../images/footer_pseudo-element-bg.svg) center center/cover;
+}
 @media screen and (min-width: 768px) {
   .footer__inner {
     padding-top: 40px;
@@ -509,8 +520,6 @@ span {
 }
 .footer__picture {
   width: 100%;
-  aspect-ratio: 375/158;
-  background-color: #adadad;
 }
 .footer__back-button {
   position: absolute;
