@@ -209,12 +209,12 @@ function setFvAnimation() {
       scrub: 1,
       invalidateOnRefresh: true,
     },
-  }).fromTo(".picture-right", {
+  }).fromTo(".picture-right img", {
     rotation: 0,
   }, {
     rotation: 180,
     ease: "linear",
-  }).fromTo(".picture-left", {
+  }).fromTo(".picture-left img", {
     rotation: 0,
   }, {
     rotation: -180,
@@ -226,7 +226,7 @@ function setFvAnimation() {
  * FVの画像表示処理
  */
 function showFvImage() {
-  gsap.fromTo([".fv__picture-1", ".fv__picture-2", ".fv__picture-3"], {
+  gsap.fromTo([".fv__picture-1 img", ".fv__picture-2 img", ".fv__picture-3 img"], {
     rotation: -90,
     opacity: 0,
     scale: 0.5,
@@ -539,6 +539,7 @@ function disableScroll() {
 function enableScroll() {
   document.removeEventListener('touchmove', noEvent);
   document.removeEventListener('wheel', noEvent);
+  setLenis();
 }
 
 /**
@@ -577,7 +578,6 @@ function init() {
   setPresentSectionAnimation();
   setOutlineSectionAnimation();
   setChangeHeaderModeAnimation();
-  setLenis();
 }
 
 init();
