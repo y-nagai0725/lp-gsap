@@ -1,6 +1,7 @@
 @use "../global" as *;
 
 .opening {
+  $parent: &;
   position: fixed;
   top: 0;
   left: 0;
@@ -36,14 +37,34 @@
     display: grid;
     place-content: center;
     z-index: 3;
+
+    &.js-white-mode {
+      #{$parent}__logo--white {
+        opacity: 1;
+      }
+
+      #{$parent}__logo--blue {
+        opacity: 0;
+      }
+    }
   }
 
   &__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 218px;
-    transition: filter 0.3s ease-out;
+    aspect-ratio: 218 / 46;
+    transition: opacity 0.3s ease-out;
+    object-fit: contain;
 
-    &.js-white-mode {
-      filter: brightness(0) invert(1);
+    &--white {
+      opacity: 0;
+    }
+
+    &--blue {
+      opacity: 1;
     }
   }
 }

@@ -141,7 +141,6 @@ function setOpeningAnimation() {
   const openingStartBg = document.querySelector(".opening__start-bg");
   const openingEndBg = document.querySelector(".opening__end-bg");
   const openingLogoWrapper = document.querySelector(".opening__logo-wrapper");
-  const openingLogo = document.querySelector(".opening__logo");
 
   //スクロール禁止
   disableScroll();
@@ -152,7 +151,7 @@ function setOpeningAnimation() {
     ease: "",
     clipPath: "inset(0 0 0 0%)",
   }).add(() => {
-    openingLogo.classList.add("js-white-mode");
+    openingLogoWrapper.classList.add("js-white-mode");
   }, "<0.2").to([openingEndBg, openingStartBg, openingLogoWrapper], {
     duration: 0.6,
     ease: "",

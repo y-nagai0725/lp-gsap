@@ -39,14 +39,12 @@
       filter: brightness(0) invert(1);
     }
 
-    #{$parent}__logo-image {
-      &.logo-blue {
-        opacity: 0;
-      }
+    #{$parent}__logo-image--blue {
+      opacity: 0;
+    }
 
-      &.logo-white {
-        opacity: 1;
-      }
+    #{$parent}__logo-image--white {
+      opacity: 1;
     }
   }
 
@@ -80,11 +78,11 @@
     position: absolute;
     transition: opacity 0.3s ease-out;
 
-    &.logo-blue {
+    &--blue {
       opacity: 1;
     }
 
-    &.logo-white {
+    &--white {
       opacity: 0;
     }
   }

@@ -227,10 +227,10 @@ span {
   -webkit-filter: brightness(0) invert(1);
           filter: brightness(0) invert(1);
 }
-.header.js-white-mode .header__logo-image.logo-blue {
+.header.js-white-mode .header__logo-image--blue {
   opacity: 0;
 }
-.header.js-white-mode .header__logo-image.logo-white {
+.header.js-white-mode .header__logo-image--white {
   opacity: 1;
 }
 @media screen and (min-width: 1024px) {
@@ -269,10 +269,10 @@ span {
   -webkit-transition: opacity 0.3s ease-out;
   transition: opacity 0.3s ease-out;
 }
-.header__logo-image.logo-blue {
+.header__logo-image--blue {
   opacity: 1;
 }
-.header__logo-image.logo-white {
+.header__logo-image--white {
   opacity: 0;
 }
 
@@ -624,16 +624,30 @@ span {
   place-content: center;
   z-index: 3;
 }
-.opening__logo {
-  width: 218px;
-  -webkit-transition: -webkit-filter 0.3s ease-out;
-  transition: -webkit-filter 0.3s ease-out;
-  transition: filter 0.3s ease-out;
-  transition: filter 0.3s ease-out, -webkit-filter 0.3s ease-out;
+.opening__logo-wrapper.js-white-mode .opening__logo--white {
+  opacity: 1;
 }
-.opening__logo.js-white-mode {
-  -webkit-filter: brightness(0) invert(1);
-          filter: brightness(0) invert(1);
+.opening__logo-wrapper.js-white-mode .opening__logo--blue {
+  opacity: 0;
+}
+.opening__logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 218px;
+  aspect-ratio: 218/46;
+  -webkit-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.opening__logo--white {
+  opacity: 0;
+}
+.opening__logo--blue {
+  opacity: 1;
 }
 
 .main {
