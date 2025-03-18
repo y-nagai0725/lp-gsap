@@ -4,6 +4,11 @@
 const mm = gsap.matchMedia();
 
 /**
+ * GSAPのease
+ */
+const gsapEasing = "power3.out";
+
+/**
  * 現在のスクロール位置(y座標)
  */
 let currentScrollPosition = 0;
@@ -27,7 +32,7 @@ document.querySelector(".hamburger-button__button").addEventListener("click", fu
 document.querySelector(".footer__back-button").addEventListener("click", function () {
   gsap.to(window, {
     duration: 0.8,
-    ease: "",
+    ease: gsapEasing,
     scrollTo: {
       y: 0,
     }
@@ -91,7 +96,7 @@ function setAnchorLinkScrollAnimation() {
       e.preventDefault();
       gsap.to(window, {
         duration: 0.8,
-        ease: "",
+        ease: gsapEasing,
         scrollTo: {
           y: href === "#" ? 0 : href,
         }
@@ -148,13 +153,13 @@ function setOpeningAnimation() {
   //背景、ロゴ表示アニメーション
   gsap.timeline().to(openingEndBg, {
     duration: 0.6,
-    ease: "",
+    ease: gsapEasing,
     clipPath: "inset(0 0 0 0%)",
   }).add(() => {
     openingLogoWrapper.classList.add("js-white-mode");
   }, "<0.2").to([openingEndBg, openingStartBg, openingLogoWrapper], {
     duration: 0.6,
-    ease: "",
+    ease: gsapEasing,
     clipPath: "inset(0 100% 0 0)",
     onComplete: () => {
       gsap.to(opening, {
@@ -193,11 +198,11 @@ function setFvAnimation() {
   }).to(".fv__title span", {
     duration: 0.8,
     yPercent: 0,
-    ease: "",
+    ease: gsapEasing,
   }).to(".fv__sub-title span", {
     duration: 0.8,
     yPercent: 0,
-    ease: "",
+    ease: gsapEasing,
   }, "<");
 
   gsap.timeline({
@@ -234,7 +239,7 @@ function showFvImage() {
     rotation: 0,
     opacity: 1,
     scale: 1,
-    ease: "",
+    ease: gsapEasing,
     stagger: {
       each: 0.33,
     },
@@ -273,7 +278,7 @@ function setIntroductionSectionAnimation() {
         gsap.timeline().to(introductionTitle, {
           duration: 0.8,
           yPercent: 0,
-          ease: "",
+          ease: gsapEasing,
         }).to(introductionText, {
           duration: 0.8,
           opacity: 1,
@@ -367,7 +372,7 @@ function setBrandSectionAnimation() {
         yPercent: -40,
         rotationX: 3,
         opacity: 0,
-        ease: "",
+        ease: gsapEasing,
         scrollTrigger: {
           trigger: list,
           start: "top bottom",
@@ -387,7 +392,7 @@ function setBrandSectionAnimation() {
     }, {
       scale: 1,
       yPercent: 0,
-      ease: "",
+      ease: gsapEasing,
       scrollTrigger: {
         trigger: brandOverviewArea,
         start: "top bottom",
@@ -436,7 +441,7 @@ function setPresentSectionAnimation() {
         opacity: 0,
         yPercent: 25,
         scale: 0.9,
-        ease: "",
+        ease: gsapEasing,
         scrollTrigger: {
           trigger: list,
           start: "top top",
@@ -495,7 +500,7 @@ function setOutlineSectionAnimation() {
       scale: 1.08,
     }, {
       scale: 1,
-      ease: "",
+      ease: gsapEasing,
       scrollTrigger: {
         trigger: outlineList,
         start: "top bottom",
