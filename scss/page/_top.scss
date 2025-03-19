@@ -441,6 +441,10 @@
 
     @include tab {
       font-size: clamp(30px, 3rem, 38px);
+
+      .br-sp {
+        display: none;
+      }
     }
 
     @include pc {

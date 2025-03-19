@@ -1070,6 +1070,9 @@ span {
   .brand__heading {
     font-size: clamp(30px, 3rem, 38px);
   }
+  .brand__heading .br-sp {
+    display: none;
+  }
 }
 @media screen and (min-width: 1024px) {
   .brand__heading {
