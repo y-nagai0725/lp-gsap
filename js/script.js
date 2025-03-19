@@ -194,12 +194,12 @@ function setFvAnimation() {
   }).fromTo(".picture-right img", {
     rotation: 0,
   }, {
-    rotation: 180,
+    rotation: 90,
     ease: "linear",
   }).fromTo(".picture-left img", {
     rotation: 0,
   }, {
-    rotation: -180,
+    rotation: -90,
     ease: "linear",
   }, "<");
 }
