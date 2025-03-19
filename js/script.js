@@ -152,13 +152,14 @@ function setOpeningAnimation() {
 
   //背景、ロゴ表示アニメーション
   gsap.timeline().to(openingEndBg, {
-    duration: 0.6,
+    delay: 0.4,
+    duration: 0.8,
     ease: gsapEasing,
     clipPath: "inset(0 0 0 0%)",
   }).add(() => {
     openingLogoWrapper.classList.add("js-white-mode");
-  }, "<0.2").to([openingEndBg, openingStartBg, openingLogoWrapper], {
-    duration: 0.6,
+  }, "<0.3").to([openingEndBg, openingStartBg, openingLogoWrapper], {
+    duration: 0.8,
     ease: gsapEasing,
     clipPath: "inset(0 100% 0 0)",
     onComplete: () => {
@@ -170,6 +171,9 @@ function setOpeningAnimation() {
     //FVの画像表示処理
     showFvImage();
 
+    //FVのタイトル表示処理
+    showFvTitle();
+
     //スクロール禁止解除
     enableScroll();
   }, "<");
@@ -179,32 +183,6 @@ function setOpeningAnimation() {
  * FVアニメーション設定
  */
 function setFvAnimation() {
-  gsap.set(".fv__title span", {
-    yPercent: 120,
-  });
-
-  gsap.set(".fv__sub-title span", {
-    yPercent: 120,
-  });
-
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: ".fv__inner",
-      start: "top 1px",
-      end: "bottom center",
-      toggleActions: "play reverse play none",
-      invalidateOnRefresh: true,
-    },
-  }).to(".fv__title span", {
-    duration: 0.8,
-    yPercent: 0,
-    ease: gsapEasing,
-  }).to(".fv__sub-title span", {
-    duration: 0.8,
-    yPercent: 0,
-    ease: gsapEasing,
-  }, "<");
-
   gsap.timeline({
     scrollTrigger: {
       trigger: ".fv__inner",
@@ -239,11 +217,30 @@ function showFvImage() {
     rotation: 0,
     opacity: 1,
     scale: 1,
-    ease: gsapEasing,
+    ease: "power1.out",
     stagger: {
       each: 0.33,
     },
   });
+}
+
+/**
+ * FVのタイトル表示処理
+ */
+function showFvTitle() {
+  gsap.timeline().fromTo(".fv__title span", {
+    yPercent: 120,
+  }, {
+    duration: 0.9,
+    yPercent: 0,
+    ease: gsapEasing,
+  }).fromTo(".fv__sub-title span", {
+    yPercent: 120,
+  }, {
+    duration: 0.9,
+    yPercent: 0,
+    ease: gsapEasing,
+  }, "<");
 }
 
 /**
