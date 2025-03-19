@@ -1410,6 +1410,9 @@ span {
   .present__heading {
     font-size: clamp(30px, 3rem, 38px);
   }
+  .present__heading .br-sp {
+    display: none;
+  }
 }
 @media screen and (min-width: 1024px) {
   .present__heading {
