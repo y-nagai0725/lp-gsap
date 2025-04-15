@@ -6,7 +6,9 @@
 - [公開URL](#公開url)
 - [目的](#目的)
 - [使用技術](#使用技術)
-- [FVセクション](#fvセクション)
+- [使用フォント](#使用フォント)
+- [デザインカンプ](#デザインカンプ)
+- [FV](#fv)
 - [Introductionセクション](#introductionセクション)
 - [Brandセクション](#brandセクション)
 - [Presentセクション](#presentセクション)
@@ -32,7 +34,15 @@
 * GSAP
 * lenis（慣性スクロール実装に使用）
 
-## FVセクション
+## 使用フォント
+* [Noto Sans JP](https://fonts.google.com/noto/specimen/Noto+Sans+JP)
+* [Roboto Slab](https://fonts.google.com/specimen/Roboto+Slab)
+* [Inter](https://fonts.google.com/specimen/Inter)
+
+## デザインカンプ
+[Figmaページ（閲覧のみ可能です）](https://www.figma.com/design/JoOv02ucjnEBfrNfWsGojQ/lp-gsap?node-id=0-1&t=OY3tojx653Z1lTG0-1)
+
+## FV
 ![Image](https://github.com/user-attachments/assets/e61ef902-c774-4465-82ac-989bcf983c56)
 
 OP演出、スクロールに連動して画像が回転します。
